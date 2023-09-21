@@ -11,7 +11,7 @@ namespace ARESDOKUM.Context
 	public class MyDbContext : DbContext
 	{
 
-		public DbSet<Employee> Employees { get; set; }
+		public DbSet<Entity.Employee> Employees { get; set; }
 		public DbSet<Shift> Shifts { get; set; }
 		public DbSet<Advance> Advances { get; set; }
 		public DbSet<Leave> Leaves { get; set; }
@@ -20,7 +20,7 @@ namespace ARESDOKUM.Context
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Data Source=OZGUVEN ;Initial Catalog=AresDokum;Integrated Security=True");
+			optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=AresDokum;Integrated Security=True");
 		}
 	}
 }
