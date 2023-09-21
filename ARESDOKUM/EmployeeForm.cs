@@ -39,5 +39,25 @@ namespace ARESDOKUM
                 MessageBox.Show("Yeni çalışan başarıyla eklendi.");
             }
         }
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_EmployeeList_Click(object sender, EventArgs e)
+        {
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız.
+            {
+                var employees = context.Employees.ToList(); // Tüm çalışanları çekmek için
+
+                // DataGridView'i doldurun
+                dataGridView1.DataSource = employees;
+
+                dataGridView1.Columns["EmployeeId"].DataPropertyName = "EmployeeId";
+                dataGridView1.Columns["FullName"].DataPropertyName = "Name";
+                dataGridView1.Columns["BaseHourlyRate"].DataPropertyName = "BaseHourlyRate";
+            }
+        }
     }
 }
