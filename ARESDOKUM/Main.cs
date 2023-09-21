@@ -16,5 +16,15 @@ namespace ARESDOKUM
 		{
 			InitializeComponent();
 		}
+
+		private void btn_Exit_Click(object sender, EventArgs e)
+		{
+			
+			// Giriş formunu yeniden aç
+			Giris girisForm = new Giris();
+			girisForm.Show();
+			this.Hide();
+
+		}
 	}
 }
