@@ -20,6 +20,40 @@ namespace ARESDOKUM
             InitializeComponent();
         }
 
+        private void LoadLeaveDataToDataGridView()
+        {
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
+            {
+                var leaves = context.Leaves
+                    .Include(l => l.Employee) // Employee ilişkisini yükleyin
+                    .Select(l => new
+                    {
+                        l.LeaveId,
+                        EmployeeName = l.Employee.Name, // İlişkili Employee'in adı
+                        l.StartDate,
+                        l.EndDate,
+                        l.Reason
+                    })
+                    .ToList();
+
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
+
+                // Leave verilerini DataGridView'e ekleyin
+                foreach (var leave in leaves)
+                {
+                    dataGridView1.Rows.Add(
+                        leave.LeaveId,
+                        leave.EmployeeName,
+                        leave.StartDate.ToShortDateString(),
+                        leave.EndDate.ToShortDateString(),
+                        leave.Reason
+                    );
+                }
+            }
+        }
+
+
         private void LeaveForm_Load(object sender, EventArgs e)
         {
             using (var context = new MyDbContext())
@@ -31,7 +65,7 @@ namespace ARESDOKUM
                 cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
                 cb_EmployeeList.DataSource = employees;
             }
-
+            LoadLeaveDataToDataGridView();
         }
 
         private void btn_AddLeave_Click(object sender, EventArgs e)
@@ -64,7 +98,20 @@ namespace ARESDOKUM
                 context.SaveChanges();
 
                 MessageBox.Show("İzin başarıyla eklendi.");
+                LoadLeaveDataToDataGridView();
             }
+        }
+
+        private void btn_Main_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Close();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

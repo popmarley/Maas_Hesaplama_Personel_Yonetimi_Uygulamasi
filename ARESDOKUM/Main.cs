@@ -47,5 +47,10 @@ namespace ARESDOKUM
             leaveForm.Show();
             this.Hide();
         }
+
+        private void btn_ExittoMain_Click(object sender, EventArgs e)
+        {
+        Application.Exit();
+        }
     }
 }

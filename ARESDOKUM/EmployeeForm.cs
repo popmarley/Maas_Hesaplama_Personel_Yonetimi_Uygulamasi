@@ -37,15 +37,11 @@ namespace ARESDOKUM
                 context.SaveChanges();
 
                 MessageBox.Show("Yeni çalışan başarıyla eklendi.");
+                LoadEmployeeList();
             }
         }
 
-        private void EmployeeForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_EmployeeList_Click(object sender, EventArgs e)
+        private void LoadEmployeeList()
         {
             using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız.
             {
@@ -58,6 +54,28 @@ namespace ARESDOKUM
                 dataGridView1.Columns["FullName"].DataPropertyName = "Name";
                 dataGridView1.Columns["BaseHourlyRate"].DataPropertyName = "BaseHourlyRate";
             }
+        }
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            LoadEmployeeList();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Main_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Close();
         }
     }
 }

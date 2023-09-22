@@ -28,10 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Employee = new System.Windows.Forms.Button();
             this.btn_Shift = new System.Windows.Forms.Button();
             this.btn_Leaves = new System.Windows.Forms.Button();
+            this.btn_ExittoMain = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -75,11 +77,26 @@
             this.btn_Leaves.UseVisualStyleBackColor = true;
             this.btn_Leaves.Click += new System.EventHandler(this.btn_Leaves_Click);
             // 
+            // btn_ExittoMain
+            // 
+            this.btn_ExittoMain.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ExittoMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ExittoMain.BackgroundImage")));
+            this.btn_ExittoMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_ExittoMain.FlatAppearance.BorderSize = 0;
+            this.btn_ExittoMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ExittoMain.Location = new System.Drawing.Point(1110, 452);
+            this.btn_ExittoMain.Name = "btn_ExittoMain";
+            this.btn_ExittoMain.Size = new System.Drawing.Size(86, 73);
+            this.btn_ExittoMain.TabIndex = 13;
+            this.btn_ExittoMain.UseVisualStyleBackColor = false;
+            this.btn_ExittoMain.Click += new System.EventHandler(this.btn_ExittoMain_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 537);
+            this.Controls.Add(this.btn_ExittoMain);
             this.Controls.Add(this.btn_Leaves);
             this.Controls.Add(this.btn_Shift);
             this.Controls.Add(this.btn_Employee);
@@ -97,5 +114,6 @@
         private System.Windows.Forms.Button btn_Employee;
         private System.Windows.Forms.Button btn_Shift;
         private System.Windows.Forms.Button btn_Leaves;
+        private System.Windows.Forms.Button btn_ExittoMain;
     }
 }

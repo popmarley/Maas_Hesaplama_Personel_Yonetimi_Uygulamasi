@@ -72,5 +72,17 @@ namespace ARESDOKUM
                 MessageBox.Show("Vardiya başarıyla eklendi.");
             }
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_Main_Click(object sender, EventArgs e)
+        {
+            Main main = new Main();
+            main.Show();
+            this.Close();
+        }
     }
 }
