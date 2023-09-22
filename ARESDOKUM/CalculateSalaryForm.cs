@@ -51,7 +51,7 @@ namespace ARESDOKUM
             // Seçilen çalışanı ve tarih aralığını alın
             Employee selectedEmployee = (Employee)cb_EmployeeList.SelectedItem;
             DateTime startDate = dt_StartDate.Value.Date;
-            DateTime endDate = dt_EndDate.Value;
+            DateTime endDate = dt_EndDate.Value.Date; // Saatin 00:00 olduğundan emin olmak için Date özelliğini kullanın
 
             using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
             {
@@ -60,8 +60,9 @@ namespace ARESDOKUM
                     .Where(s => s.EmployeeId == selectedEmployee.EmployeeId && s.Date >= startDate && s.Date <= endDate)
                     .ToList();
 
-                // Toplam çalışma saatlerini hesaplayın
-                decimal totalHoursWorked = shifts.Sum(s => s.HoursWorked);
+                // Toplam çalışma saatlerini ve ücreti sıfırlayın
+                decimal totalHoursWorked = 0;
+                decimal totalSalary = 0;
 
                 // Saatlik ücreti başlangıçta saatlik ücret olarak alın
                 decimal hourlyRate = selectedEmployee.BaseHourlyRate;
@@ -76,16 +77,20 @@ namespace ARESDOKUM
                     {
                         hourlyRate = selectedEmployee.BaseHourlyRate * 2m; // Pazar günleri saatlik ücreti 2 ile çarpın
                     }
-                    // Diğer günlerde saatlik ücreti değişmeden devam edecek.
+                    else
+                    {
+                        hourlyRate = selectedEmployee.BaseHourlyRate; // Diğer günlerde saatlik ücreti normal değeri alın
+                    }
+
+                    totalHoursWorked += shift.HoursWorked; // Toplam çalışma saatlerini toplayın
+                    totalSalary += hourlyRate * shift.HoursWorked; // Toplam ücreti hesaplayın
                 }
 
-                // Maaşı hesaplayın (saatlik ücret * toplam çalışma saatleri)
-                decimal salary = hourlyRate * totalHoursWorked;
-
-                // Sonucu label'e yazdırın
-                lbl_Salary.Text = $"{salary:C}";
+                // Maaşı sonucu label'e yazdırın
+                lbl_Salary.Text = $"{totalSalary:C}";
             }
         }
+
 
 
     }
