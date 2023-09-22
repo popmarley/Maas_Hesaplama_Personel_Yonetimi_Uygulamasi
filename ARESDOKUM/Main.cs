@@ -40,5 +40,12 @@ namespace ARESDOKUM
             shiftForm.Show();
             this.Hide();
         }
+
+        private void btn_Leaves_Click(object sender, EventArgs e)
+        {
+            LeaveForm leaveForm = new LeaveForm();  
+            leaveForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -179,6 +179,12 @@
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
     <Compile Include="Entity\Leave.cs" />
+    <Compile Include="LeaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LeaveForm.Designer.cs">
+      <DependentUpon>LeaveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LeaveForm.resx">
+      <DependentUpon>LeaveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

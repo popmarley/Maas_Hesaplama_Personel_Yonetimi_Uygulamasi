@@ -31,6 +31,7 @@
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Employee = new System.Windows.Forms.Button();
             this.btn_Shift = new System.Windows.Forms.Button();
+            this.btn_Leaves = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Exit
@@ -64,11 +65,22 @@
             this.btn_Shift.UseVisualStyleBackColor = true;
             this.btn_Shift.Click += new System.EventHandler(this.btn_Shift_Click);
             // 
+            // btn_Leaves
+            // 
+            this.btn_Leaves.Location = new System.Drawing.Point(993, 115);
+            this.btn_Leaves.Name = "btn_Leaves";
+            this.btn_Leaves.Size = new System.Drawing.Size(203, 47);
+            this.btn_Leaves.TabIndex = 3;
+            this.btn_Leaves.Text = "İzin Talepleri";
+            this.btn_Leaves.UseVisualStyleBackColor = true;
+            this.btn_Leaves.Click += new System.EventHandler(this.btn_Leaves_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 537);
+            this.Controls.Add(this.btn_Leaves);
             this.Controls.Add(this.btn_Shift);
             this.Controls.Add(this.btn_Employee);
             this.Controls.Add(this.btn_Exit);
@@ -84,5 +96,6 @@
 		private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Employee;
         private System.Windows.Forms.Button btn_Shift;
+        private System.Windows.Forms.Button btn_Leaves;
     }
 }
