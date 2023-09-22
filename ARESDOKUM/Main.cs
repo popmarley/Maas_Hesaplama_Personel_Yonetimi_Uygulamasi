@@ -46,5 +46,12 @@ namespace ARESDOKUM
             advanceForm.Show();
             this.Hide();
         }
+
+        private void btn_CalculateSalary_Click(object sender, EventArgs e)
+        {
+            CalculateSalaryForm calculateSalaryForm = new CalculateSalaryForm();
+            calculateSalaryForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -168,6 +168,12 @@
     <Compile Include="AdvanceForm.Designer.cs">
       <DependentUpon>AdvanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalculateSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculateSalaryForm.Designer.cs">
+      <DependentUpon>CalculateSalaryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Context\MyDbContext.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -209,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="AdvanceForm.resx">
       <DependentUpon>AdvanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalculateSalaryForm.resx">
+      <DependentUpon>CalculateSalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

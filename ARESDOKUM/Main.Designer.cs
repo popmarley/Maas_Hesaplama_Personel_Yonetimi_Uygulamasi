@@ -34,6 +34,7 @@
             this.btn_Leaves = new System.Windows.Forms.Button();
             this.btn_ExittoMain = new System.Windows.Forms.Button();
             this.btn_Advance = new System.Windows.Forms.Button();
+            this.btn_CalculateSalary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Employee
@@ -90,11 +91,22 @@
             this.btn_Advance.UseVisualStyleBackColor = true;
             this.btn_Advance.Click += new System.EventHandler(this.btn_Advance_Click);
             // 
+            // btn_CalculateSalary
+            // 
+            this.btn_CalculateSalary.Location = new System.Drawing.Point(993, 228);
+            this.btn_CalculateSalary.Name = "btn_CalculateSalary";
+            this.btn_CalculateSalary.Size = new System.Drawing.Size(203, 53);
+            this.btn_CalculateSalary.TabIndex = 15;
+            this.btn_CalculateSalary.Text = "Maaş Hesapla";
+            this.btn_CalculateSalary.UseVisualStyleBackColor = true;
+            this.btn_CalculateSalary.Click += new System.EventHandler(this.btn_CalculateSalary_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 537);
+            this.Controls.Add(this.btn_CalculateSalary);
             this.Controls.Add(this.btn_Advance);
             this.Controls.Add(this.btn_ExittoMain);
             this.Controls.Add(this.btn_Leaves);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.Button btn_Leaves;
         private System.Windows.Forms.Button btn_ExittoMain;
         private System.Windows.Forms.Button btn_Advance;
+        private System.Windows.Forms.Button btn_CalculateSalary;
     }
 }
