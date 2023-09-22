@@ -33,15 +33,15 @@
             this.txt_AddEmployee_HourlyRate = new System.Windows.Forms.TextBox();
             this.btn_AddEmployee = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseHourlyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Main = new System.Windows.Forms.Button();
+            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseHourlyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,29 +78,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeId,
-            this.FullName,
+            this.Name,
             this.BaseHourlyRate});
             this.dataGridView1.Location = new System.Drawing.Point(495, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(396, 449);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // EmployeeId
-            // 
-            this.EmployeeId.HeaderText = "Id";
-            this.EmployeeId.Name = "EmployeeId";
-            this.EmployeeId.Width = 50;
-            // 
-            // FullName
-            // 
-            this.FullName.HeaderText = "Ad Soyad";
-            this.FullName.Name = "FullName";
-            this.FullName.Width = 200;
-            // 
-            // BaseHourlyRate
-            // 
-            this.BaseHourlyRate.HeaderText = "Saatlik Kazanç";
-            this.BaseHourlyRate.Name = "BaseHourlyRate";
             // 
             // btn_Exit
             // 
@@ -178,6 +161,23 @@
             this.btn_Main.UseVisualStyleBackColor = false;
             this.btn_Main.Click += new System.EventHandler(this.btn_Main_Click);
             // 
+            // EmployeeId
+            // 
+            this.EmployeeId.HeaderText = "Id";
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.Width = 50;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Ad Soyad";
+            this.Name.Name = "Name";
+            this.Name.Width = 200;
+            // 
+            // BaseHourlyRate
+            // 
+            this.BaseHourlyRate.HeaderText = "Saatlik Kazanç";
+            this.BaseHourlyRate.Name = "BaseHourlyRate";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +188,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "EmployeeForm";
             this.Text = "Çalışanlar";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -205,14 +204,14 @@
         private System.Windows.Forms.TextBox txt_AddEmployee_HourlyRate;
         private System.Windows.Forms.Button btn_AddEmployee;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BaseHourlyRate;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Main;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BaseHourlyRate;
     }
 }

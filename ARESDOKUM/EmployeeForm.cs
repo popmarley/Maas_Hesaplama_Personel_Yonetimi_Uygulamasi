@@ -43,16 +43,22 @@ namespace ARESDOKUM
 
         private void LoadEmployeeList()
         {
-            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız.
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
             {
-                var employees = context.Employees.ToList(); // Tüm çalışanları çekmek için
+                var employees = context.Employees.ToList();
 
-                // DataGridView'i doldurun
-                dataGridView1.DataSource = employees;
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
 
-                dataGridView1.Columns["EmployeeId"].DataPropertyName = "EmployeeId";
-                dataGridView1.Columns["FullName"].DataPropertyName = "Name";
-                dataGridView1.Columns["BaseHourlyRate"].DataPropertyName = "BaseHourlyRate";
+                // Employee verilerini DataGridView'e ekleyin
+                foreach (var employee in employees)
+                {
+                    dataGridView1.Rows.Add(
+                        employee.EmployeeId,
+                        employee.Name,
+                        employee.BaseHourlyRate
+                    );
+                }
             }
         }
 
