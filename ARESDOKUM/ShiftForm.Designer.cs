@@ -40,7 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ShiftId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoursWorked = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_AddShift
@@ -167,11 +173,47 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Çalışma Saati Girişi";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ShiftId,
+            this.EmployeeName,
+            this.Date,
+            this.HoursWorked});
+            this.dataGridView1.Location = new System.Drawing.Point(447, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(565, 464);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // ShiftId
+            // 
+            this.ShiftId.HeaderText = "Id";
+            this.ShiftId.Name = "ShiftId";
+            this.ShiftId.Width = 50;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.HeaderText = "Ad Soyad";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.Width = 120;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Tarih";
+            this.Date.Name = "Date";
+            // 
+            // HoursWorked
+            // 
+            this.HoursWorked.HeaderText = "Çalıştığı Saat";
+            this.HoursWorked.Name = "HoursWorked";
+            // 
             // ShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 510);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit);
@@ -181,6 +223,7 @@
             this.Load += new System.EventHandler(this.ShiftForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +242,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShiftId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoursWorked;
     }
 }

@@ -39,51 +39,57 @@
             // 
             // txt_UserName
             // 
-            this.txt_UserName.Location = new System.Drawing.Point(162, 172);
-            this.txt_UserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_UserName.Location = new System.Drawing.Point(202, 183);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Size = new System.Drawing.Size(169, 20);
+            this.txt_UserName.Size = new System.Drawing.Size(169, 22);
             this.txt_UserName.TabIndex = 1;
             // 
             // txt_UserPassword
             // 
-            this.txt_UserPassword.Location = new System.Drawing.Point(162, 243);
-            this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txt_UserPassword.Location = new System.Drawing.Point(203, 226);
+            this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txt_UserPassword.Name = "txt_UserPassword";
-            this.txt_UserPassword.Size = new System.Drawing.Size(169, 20);
+            this.txt_UserPassword.Size = new System.Drawing.Size(169, 22);
             this.txt_UserPassword.TabIndex = 2;
             // 
             // btn_Giris
             // 
-            this.btn_Giris.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Giris.Location = new System.Drawing.Point(213, 308);
-            this.btn_Giris.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Giris.BackColor = System.Drawing.Color.YellowGreen;
+            this.btn_Giris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_Giris.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Giris.Location = new System.Drawing.Point(104, 261);
+            this.btn_Giris.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Giris.Name = "btn_Giris";
-            this.btn_Giris.Size = new System.Drawing.Size(56, 19);
+            this.btn_Giris.Size = new System.Drawing.Size(267, 48);
             this.btn_Giris.TabIndex = 3;
             this.btn_Giris.Text = "Giriş";
-            this.btn_Giris.UseVisualStyleBackColor = true;
+            this.btn_Giris.UseVisualStyleBackColor = false;
             this.btn_Giris.Click += new System.EventHandler(this.btn_Giris_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(81, 175);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(102, 186);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Kullanıcı Adı:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(111, 245);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(155, 229);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Şifre:";
             // 
@@ -115,7 +121,7 @@
             this.Controls.Add(this.txt_UserPassword);
             this.Controls.Add(this.txt_UserName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giris";

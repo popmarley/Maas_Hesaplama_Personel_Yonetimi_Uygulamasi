@@ -1,5 +1,6 @@
 ﻿using ARESDOKUM.Context;
 using ARESDOKUM.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,38 @@ namespace ARESDOKUM
             InitializeComponent();
         }
 
+        private void LoadShiftDataToDataGridView()
+        {
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
+            {
+                var shifts = context.Shifts
+                    .Include(s => s.Employee) // Employee ilişkisini yükleyin
+                    .Select(s => new
+                    {
+                        s.ShiftId,
+                        EmployeeName = s.Employee.Name, // İlişkili Employee'in adı
+                        s.Date,
+                        s.HoursWorked
+                    })
+                    .ToList();
+
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
+
+                // Shift verilerini DataGridView'e ekleyin
+                foreach (var shift in shifts)
+                {
+                    dataGridView1.Rows.Add(
+                        shift.ShiftId,
+                        shift.EmployeeName,
+                        shift.Date.ToShortDateString(),
+                        shift.HoursWorked
+                    );
+                }
+            }
+        }
+
+
         private void ShiftForm_Load(object sender, EventArgs e)
         {
             using (var context = new MyDbContext())
@@ -30,6 +63,7 @@ namespace ARESDOKUM
                 cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
                 cb_EmployeeList.DataSource = employees;
             }
+            LoadShiftDataToDataGridView();
         }
 
         private void dt_Date_ValueChanged(object sender, EventArgs e)
@@ -70,13 +104,11 @@ namespace ARESDOKUM
                 context.SaveChanges();
 
                 MessageBox.Show("Vardiya başarıyla eklendi.");
+                LoadShiftDataToDataGridView();
             }
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        private void btn_Exit_Click(object sender, EventArgs e) => Application.Exit();
 
         private void btn_Main_Click(object sender, EventArgs e)
         {
