@@ -17,16 +17,6 @@ namespace ARESDOKUM
             InitializeComponent();
         }
 
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            // Giriş formunu yeniden aç
-            Giris girisForm = new Giris();
-            girisForm.Show();
-            this.Hide();
-
-        }
-
-
         private void btn_Employee_Click(object sender, EventArgs e)
         {
             EmployeeForm EmployeeForm = new EmployeeForm();
@@ -48,9 +38,13 @@ namespace ARESDOKUM
             this.Hide();
         }
 
-        private void btn_ExittoMain_Click(object sender, EventArgs e)
+        private void btn_ExittoMain_Click(object sender, EventArgs e) => Application.Exit();
+
+        private void btn_Advance_Click(object sender, EventArgs e)
         {
-        Application.Exit();
+            AdvanceForm advanceForm = new AdvanceForm();  
+            advanceForm.Show();
+            this.Hide();
         }
     }
 }

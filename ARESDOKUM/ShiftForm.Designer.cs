@@ -65,7 +65,7 @@
             this.txt_ShiftHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_ShiftHour.Location = new System.Drawing.Point(99, 111);
             this.txt_ShiftHour.Name = "txt_ShiftHour";
-            this.txt_ShiftHour.Size = new System.Drawing.Size(131, 22);
+            this.txt_ShiftHour.Size = new System.Drawing.Size(200, 22);
             this.txt_ShiftHour.TabIndex = 1;
             // 
             // cb_EmployeeList
@@ -74,7 +74,7 @@
             this.cb_EmployeeList.FormattingEnabled = true;
             this.cb_EmployeeList.Location = new System.Drawing.Point(99, 38);
             this.cb_EmployeeList.Name = "cb_EmployeeList";
-            this.cb_EmployeeList.Size = new System.Drawing.Size(132, 24);
+            this.cb_EmployeeList.Size = new System.Drawing.Size(200, 24);
             this.cb_EmployeeList.TabIndex = 2;
             // 
             // dt_Date

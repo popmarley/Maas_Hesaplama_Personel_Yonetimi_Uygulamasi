@@ -29,29 +29,18 @@
 		private void InitializeComponent()
 		{
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Employee = new System.Windows.Forms.Button();
             this.btn_Shift = new System.Windows.Forms.Button();
             this.btn_Leaves = new System.Windows.Forms.Button();
             this.btn_ExittoMain = new System.Windows.Forms.Button();
+            this.btn_Advance = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btn_Exit
-            // 
-            this.btn_Exit.Location = new System.Drawing.Point(1097, 11);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(99, 43);
-            this.btn_Exit.TabIndex = 0;
-            this.btn_Exit.Text = "Çıkış Yap";
-            this.btn_Exit.UseVisualStyleBackColor = true;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Employee
             // 
             this.btn_Employee.Location = new System.Drawing.Point(993, 12);
             this.btn_Employee.Name = "btn_Employee";
-            this.btn_Employee.Size = new System.Drawing.Size(89, 44);
+            this.btn_Employee.Size = new System.Drawing.Size(203, 44);
             this.btn_Employee.TabIndex = 1;
             this.btn_Employee.Text = "Çalışanlar";
             this.btn_Employee.UseVisualStyleBackColor = true;
@@ -91,16 +80,26 @@
             this.btn_ExittoMain.UseVisualStyleBackColor = false;
             this.btn_ExittoMain.Click += new System.EventHandler(this.btn_ExittoMain_Click);
             // 
+            // btn_Advance
+            // 
+            this.btn_Advance.Location = new System.Drawing.Point(993, 169);
+            this.btn_Advance.Name = "btn_Advance";
+            this.btn_Advance.Size = new System.Drawing.Size(203, 52);
+            this.btn_Advance.TabIndex = 14;
+            this.btn_Advance.Text = "Avans Talepleri";
+            this.btn_Advance.UseVisualStyleBackColor = true;
+            this.btn_Advance.Click += new System.EventHandler(this.btn_Advance_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 537);
+            this.Controls.Add(this.btn_Advance);
             this.Controls.Add(this.btn_ExittoMain);
             this.Controls.Add(this.btn_Leaves);
             this.Controls.Add(this.btn_Shift);
             this.Controls.Add(this.btn_Employee);
-            this.Controls.Add(this.btn_Exit);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
@@ -109,11 +108,10 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Employee;
         private System.Windows.Forms.Button btn_Shift;
         private System.Windows.Forms.Button btn_Leaves;
         private System.Windows.Forms.Button btn_ExittoMain;
+        private System.Windows.Forms.Button btn_Advance;
     }
 }
