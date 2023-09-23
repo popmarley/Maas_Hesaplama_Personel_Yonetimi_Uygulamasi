@@ -1,5 +1,6 @@
 ﻿using ARESDOKUM.Context;
 using ARESDOKUM.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,35 @@ namespace ARESDOKUM
             InitializeComponent();
         }
 
+        private void LoadPaymentList()
+        {
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
+            {
+                var payments = context.Payments
+                    .Include(p => p.Employee) // İşçi bilgisini yükleyin
+                    .ToList();
+
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
+
+                // Payment verilerini DataGridView'e ekleyin
+                foreach (var payment in payments)
+                {
+                    DataGridViewRow row = dataGridView1.Rows[dataGridView1.Rows.Add(
+                        payment.PaymentId,
+                        payment.Employee.Name, // İşçinin adını kullanın
+                        $"{payment.Amount:C}", // Amount'u para birimi formatında yazdırın
+                        payment.PaymentDate.ToString("dd.MM.yyyy"), // Tarihi belirlediğiniz biçimde yazdırın
+                        payment.Description
+                    )];
+
+                    // Ödeme yapılan tutarı yeşil renkte yazdırın
+                    row.Cells[2].Style.ForeColor = Color.Green;
+                }
+            }
+
+        }
+
         private void LoadEmployeeList()
         {
             using (var context = new MyDbContext())
@@ -32,6 +62,7 @@ namespace ARESDOKUM
                 cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
                 cb_EmployeeList.DataSource = employees;
             }
+            LoadPaymentList();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e) => Application.Exit();
