@@ -47,6 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +185,7 @@
             this.lbl_Response.AutoSize = true;
             this.lbl_Response.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_Response.ForeColor = System.Drawing.Color.Green;
-            this.lbl_Response.Location = new System.Drawing.Point(422, 187);
+            this.lbl_Response.Location = new System.Drawing.Point(571, 189);
             this.lbl_Response.Name = "lbl_Response";
             this.lbl_Response.Size = new System.Drawing.Size(63, 20);
             this.lbl_Response.TabIndex = 30;
@@ -246,6 +247,16 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Açıklama";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(423, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(142, 20);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Ödenecek Tutar:";
+            // 
             // CalculateSalaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +270,7 @@
             this.Controls.Add(this.lbl_Response);
             this.Controls.Add(this.lbl_Advance);
             this.Controls.Add(this.lbl_Salary);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_Main);
             this.Controls.Add(this.btn_Exit);
@@ -292,5 +304,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

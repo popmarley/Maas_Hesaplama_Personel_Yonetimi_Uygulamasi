@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
 namespace ARESDOKUM.Entity
 {
@@ -21,5 +22,8 @@ namespace ARESDOKUM.Entity
 
 		[Column(TypeName = "decimal(5, 2)")]
 		public decimal HoursWorked { get; set; }
-	}
+
+        [DefaultValue(false)] // PaymentMade alanının varsayılan değeri "false" olarak ayarlandı.
+        public bool PaymentMade { get; set; }
+    }
 }
