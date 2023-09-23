@@ -138,6 +138,7 @@ namespace ARESDOKUM
                     foreach (var shift in shifts.Where(s => s.PaymentMade))
                     {
                         paymentMadeDetails += $"Tarih: {shift.Date.ToShortDateString()}, Çalışma Saati: {shift.HoursWorked} saat\n";
+                        lbl_CheckPaymentMade.ForeColor = Color.Red;
                     }
 
                     lbl_CheckPaymentMade.Text = paymentMadeDetails;
@@ -145,6 +146,7 @@ namespace ARESDOKUM
                 else
                 {
                     lbl_CheckPaymentMade.Text = "Belirtilen tarihler arasında ödemesi yapılmış bir vardiya bulunmamaktadır.";
+                    lbl_CheckPaymentMade.ForeColor = Color.Green;
                 }
             }
         }
@@ -197,7 +199,21 @@ namespace ARESDOKUM
                 context.SaveChanges();
 
                 MessageBox.Show("Ödeme başarıyla kaydedildi ve Shift kayıtları güncellendi.");
+                Reset();
             }
+        }
+
+        private void Reset()
+        {
+            cb_EmployeeList.SelectedIndex = -1;
+            lbl_Response.Text = "0,00 ₺";
+            rTxt_Description.Clear();
+            // Tarih aralığını ayarlama
+            dt_StartDate.Value = DateTime.Now.AddMonths(-1);
+            dt_EndDate.Value = DateTime.Now;
+            lbl_Advance.Text = "-------";
+            lbl_CheckPaymentMade.Text = "-------";
+            lbl_Salary.Text = "000";
         }
 
     }

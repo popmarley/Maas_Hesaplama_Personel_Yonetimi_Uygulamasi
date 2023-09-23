@@ -31,7 +31,8 @@ namespace ARESDOKUM
                         s.ShiftId,
                         EmployeeName = s.Employee.Name, // İlişkili Employee'in adı
                         s.Date,
-                        s.HoursWorked
+                        s.HoursWorked,
+                        s.PaymentMade // PaymentMade özelliğini ekleyin
                     })
                     .ToList();
 
@@ -41,15 +42,19 @@ namespace ARESDOKUM
                 // Shift verilerini DataGridView'e ekleyin
                 foreach (var shift in shifts)
                 {
+                    string paymentStatus = shift.PaymentMade ? "Ödendi" : "Ödenmedi"; // PaymentMade durumunu belirleyin
+
                     dataGridView1.Rows.Add(
                         shift.ShiftId,
                         shift.EmployeeName,
                         shift.Date.ToShortDateString(),
-                        shift.HoursWorked
+                        shift.HoursWorked,
+                        paymentStatus // PaymentMade durumunu DataGridView'e ekleyin
                     );
                 }
             }
         }
+
 
 
         private void ShiftForm_Load(object sender, EventArgs e)

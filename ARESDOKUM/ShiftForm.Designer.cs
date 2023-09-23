@@ -45,6 +45,7 @@
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoursWorked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentMade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +94,7 @@
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.FlatAppearance.BorderSize = 0;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(110, 428);
+            this.btn_Exit.Location = new System.Drawing.Point(107, 521);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(86, 73);
             this.btn_Exit.TabIndex = 14;
@@ -108,7 +109,7 @@
             this.btn_Main.FlatAppearance.BorderSize = 0;
             this.btn_Main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Main.ForeColor = System.Drawing.Color.Coral;
-            this.btn_Main.Location = new System.Drawing.Point(12, 428);
+            this.btn_Main.Location = new System.Drawing.Point(9, 521);
             this.btn_Main.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Main.Name = "btn_Main";
             this.btn_Main.Size = new System.Drawing.Size(86, 73);
@@ -180,10 +181,11 @@
             this.ShiftId,
             this.EmployeeName,
             this.Date,
-            this.HoursWorked});
+            this.HoursWorked,
+            this.PaymentMade});
             this.dataGridView1.Location = new System.Drawing.Point(447, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(565, 464);
+            this.dataGridView1.Size = new System.Drawing.Size(514, 567);
             this.dataGridView1.TabIndex = 18;
             // 
             // ShiftId
@@ -208,11 +210,16 @@
             this.HoursWorked.HeaderText = "Çalıştığı Saat";
             this.HoursWorked.Name = "HoursWorked";
             // 
+            // PaymentMade
+            // 
+            this.PaymentMade.HeaderText = "Ödenme Durumu";
+            this.PaymentMade.Name = "PaymentMade";
+            // 
             // ShiftForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 510);
+            this.ClientSize = new System.Drawing.Size(977, 606);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -247,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoursWorked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMade;
     }
 }
