@@ -134,6 +134,7 @@ namespace ARESDOKUM
                 bool isPaymentMade = shifts.Any(s => s.PaymentMade);
                 if (isPaymentMade)
                 {
+                    btn_MakePayment.Visible = false;
                     string paymentMadeDetails = "Aşağıdaki tarihlerde ödeme yapılmış vardiyalar bulunmaktadır. LÜTFEN TARİHLERİ DÜZENLEYİNİZ\n";
                     foreach (var shift in shifts.Where(s => s.PaymentMade))
                     {
