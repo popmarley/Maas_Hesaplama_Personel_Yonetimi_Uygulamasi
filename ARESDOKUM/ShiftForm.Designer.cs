@@ -54,7 +54,7 @@
 			// 
 			this.btn_AddShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.btn_AddShift.Location = new System.Drawing.Point(16, 188);
-			this.btn_AddShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_AddShift.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_AddShift.Name = "btn_AddShift";
 			this.btn_AddShift.Size = new System.Drawing.Size(383, 64);
 			this.btn_AddShift.TabIndex = 0;
@@ -66,7 +66,7 @@
 			// 
 			this.txt_ShiftHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.txt_ShiftHour.Location = new System.Drawing.Point(132, 137);
-			this.txt_ShiftHour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txt_ShiftHour.Margin = new System.Windows.Forms.Padding(4);
 			this.txt_ShiftHour.Name = "txt_ShiftHour";
 			this.txt_ShiftHour.Size = new System.Drawing.Size(265, 26);
 			this.txt_ShiftHour.TabIndex = 1;
@@ -76,7 +76,7 @@
 			this.cb_EmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.cb_EmployeeList.FormattingEnabled = true;
 			this.cb_EmployeeList.Location = new System.Drawing.Point(132, 47);
-			this.cb_EmployeeList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.cb_EmployeeList.Margin = new System.Windows.Forms.Padding(4);
 			this.cb_EmployeeList.Name = "cb_EmployeeList";
 			this.cb_EmployeeList.Size = new System.Drawing.Size(265, 28);
 			this.cb_EmployeeList.TabIndex = 2;
@@ -85,7 +85,7 @@
 			// 
 			this.dt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.dt_Date.Location = new System.Drawing.Point(132, 91);
-			this.dt_Date.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dt_Date.Margin = new System.Windows.Forms.Padding(4);
 			this.dt_Date.Name = "dt_Date";
 			this.dt_Date.Size = new System.Drawing.Size(265, 26);
 			this.dt_Date.TabIndex = 3;
@@ -100,7 +100,7 @@
 			this.btn_Exit.FlatAppearance.BorderSize = 0;
 			this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btn_Exit.Location = new System.Drawing.Point(143, 641);
-			this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Exit.Name = "btn_Exit";
 			this.btn_Exit.Size = new System.Drawing.Size(115, 90);
 			this.btn_Exit.TabIndex = 14;
@@ -181,9 +181,9 @@
 			this.groupBox1.Controls.Add(this.dt_Date);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.groupBox1.Location = new System.Drawing.Point(41, 190);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Size = new System.Drawing.Size(421, 271);
 			this.groupBox1.TabIndex = 17;
 			this.groupBox1.TabStop = false;
@@ -202,15 +202,17 @@
             this.HoursWorked,
             this.PaymentMade});
 			this.dataGridView1.Location = new System.Drawing.Point(596, 33);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(685, 698);
+			this.dataGridView1.Size = new System.Drawing.Size(685, 250);
 			this.dataGridView1.TabIndex = 18;
+			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+			this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
 			// 
 			// ShiftId
 			// 
-			this.ShiftId.HeaderText = "Id";
+			this.ShiftId.HeaderText = "Sıra";
 			this.ShiftId.MinimumWidth = 6;
 			this.ShiftId.Name = "ShiftId";
 			this.ShiftId.Width = 50;
@@ -255,7 +257,7 @@
 			this.Controls.Add(this.btn_Exit);
 			this.Controls.Add(this.btn_Main);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ShiftForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ares Döküm | PYS";

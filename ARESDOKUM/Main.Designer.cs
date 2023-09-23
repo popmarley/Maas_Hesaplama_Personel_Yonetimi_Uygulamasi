@@ -51,7 +51,7 @@
 			this.btn_Employee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Employee.BackgroundImage")));
 			this.btn_Employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Employee.Location = new System.Drawing.Point(549, 308);
-			this.btn_Employee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Employee.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Employee.Name = "btn_Employee";
 			this.btn_Employee.Size = new System.Drawing.Size(269, 182);
 			this.btn_Employee.TabIndex = 1;
@@ -65,7 +65,7 @@
 			this.btn_Shift.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Shift.BackgroundImage")));
 			this.btn_Shift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Shift.Location = new System.Drawing.Point(272, 118);
-			this.btn_Shift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Shift.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Shift.Name = "btn_Shift";
 			this.btn_Shift.Size = new System.Drawing.Size(269, 182);
 			this.btn_Shift.TabIndex = 2;
@@ -79,7 +79,7 @@
 			this.btn_Leaves.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Leaves.BackgroundImage")));
 			this.btn_Leaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Leaves.Location = new System.Drawing.Point(549, 118);
-			this.btn_Leaves.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Leaves.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Leaves.Name = "btn_Leaves";
 			this.btn_Leaves.Size = new System.Drawing.Size(269, 182);
 			this.btn_Leaves.TabIndex = 3;
@@ -95,7 +95,7 @@
 			this.btn_ExittoMain.FlatAppearance.BorderSize = 0;
 			this.btn_ExittoMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btn_ExittoMain.Location = new System.Drawing.Point(16, 556);
-			this.btn_ExittoMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_ExittoMain.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_ExittoMain.Name = "btn_ExittoMain";
 			this.btn_ExittoMain.Size = new System.Drawing.Size(115, 90);
 			this.btn_ExittoMain.TabIndex = 13;
@@ -109,7 +109,7 @@
 			this.btn_Advance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Advance.BackgroundImage")));
 			this.btn_Advance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Advance.Location = new System.Drawing.Point(827, 118);
-			this.btn_Advance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Advance.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Advance.Name = "btn_Advance";
 			this.btn_Advance.Size = new System.Drawing.Size(269, 182);
 			this.btn_Advance.TabIndex = 14;
@@ -123,7 +123,7 @@
 			this.btn_Payments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Payments.BackgroundImage")));
 			this.btn_Payments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Payments.Location = new System.Drawing.Point(827, 308);
-			this.btn_Payments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Payments.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Payments.Name = "btn_Payments";
 			this.btn_Payments.Size = new System.Drawing.Size(269, 182);
 			this.btn_Payments.TabIndex = 16;
@@ -138,9 +138,9 @@
 			this.label1.Location = new System.Drawing.Point(299, 90);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(195, 25);
+			this.label1.Size = new System.Drawing.Size(202, 25);
 			this.label1.TabIndex = 17;
-			this.label1.Text = "Girş Çıkış Saati Gir";
+			this.label1.Text = "Giriş-Çıkış Saati Gir";
 			// 
 			// label2
 			// 
@@ -209,7 +209,7 @@
 			this.btn_CalculateSalary.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_CalculateSalary.BackgroundImage")));
 			this.btn_CalculateSalary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_CalculateSalary.Location = new System.Drawing.Point(272, 308);
-			this.btn_CalculateSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_CalculateSalary.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_CalculateSalary.Name = "btn_CalculateSalary";
 			this.btn_CalculateSalary.Size = new System.Drawing.Size(269, 182);
 			this.btn_CalculateSalary.TabIndex = 15;
