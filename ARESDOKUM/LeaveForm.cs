@@ -42,16 +42,38 @@ namespace ARESDOKUM
                 // Leave verilerini DataGridView'e ekleyin
                 foreach (var leave in leaves)
                 {
-                    dataGridView1.Rows.Add(
+                    int rowIndex = dataGridView1.Rows.Add(
                         leave.LeaveId,
                         leave.EmployeeName,
                         leave.StartDate.ToShortDateString(),
                         leave.EndDate.ToShortDateString(),
                         leave.Reason
                     );
+
+                    // EndDate hücresini alın
+                    DataGridViewCell endDateCell = dataGridView1.Rows[rowIndex].Cells["EndDate"];
+                    if (endDateCell != null && endDateCell.Value != null)
+                    {
+                        DateTime endDate;
+                        if (DateTime.TryParse(endDateCell.Value.ToString(), out endDate))
+                        {
+                            if (endDate < DateTime.Now)
+                            {
+                                // EndDate şuanki tarihten önce ise Kırmızı renkte yaz
+                                endDateCell.Style.ForeColor = Color.Red;
+                            }
+                            else
+                            {
+                                // EndDate şuanki tarihten sonra ise Yeşil renkte yaz
+                                endDateCell.Style.ForeColor = Color.Green;
+                            }
+                        }
+                    }
                 }
             }
         }
+
+
 
 
         private void LeaveForm_Load(object sender, EventArgs e)
