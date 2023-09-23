@@ -33,15 +33,15 @@
             this.txt_AddEmployee_HourlyRate = new System.Windows.Forms.TextBox();
             this.btn_AddEmployee = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaseHourlyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Main = new System.Windows.Forms.Button();
-            this.EmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaseHourlyRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             // btn_AddEmployee
             // 
             this.btn_AddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_AddEmployee.Location = new System.Drawing.Point(30, 104);
+            this.btn_AddEmployee.Location = new System.Drawing.Point(30, 117);
             this.btn_AddEmployee.Name = "btn_AddEmployee";
             this.btn_AddEmployee.Size = new System.Drawing.Size(225, 40);
             this.btn_AddEmployee.TabIndex = 2;
@@ -75,15 +75,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeId,
             this.Name,
             this.BaseHourlyRate});
-            this.dataGridView1.Location = new System.Drawing.Point(495, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(405, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(396, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(403, 449);
             this.dataGridView1.TabIndex = 3;
+            // 
+            // EmployeeId
+            // 
+            this.EmployeeId.HeaderText = "Id";
+            this.EmployeeId.Name = "EmployeeId";
+            this.EmployeeId.Width = 50;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Ad Soyad";
+            this.Name.Name = "Name";
+            this.Name.Width = 200;
+            // 
+            // BaseHourlyRate
+            // 
+            this.BaseHourlyRate.HeaderText = "Saatlik Kazanç";
+            this.BaseHourlyRate.Name = "BaseHourlyRate";
             // 
             // btn_Exit
             // 
@@ -140,7 +159,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(22, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(281, 294);
+            this.groupBox1.Size = new System.Drawing.Size(281, 175);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Yeni Çalışan Ekle";
@@ -161,33 +180,18 @@
             this.btn_Main.UseVisualStyleBackColor = false;
             this.btn_Main.Click += new System.EventHandler(this.btn_Main_Click);
             // 
-            // EmployeeId
-            // 
-            this.EmployeeId.HeaderText = "Id";
-            this.EmployeeId.Name = "EmployeeId";
-            this.EmployeeId.Width = 50;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Ad Soyad";
-            this.Name.Name = "Name";
-            this.Name.Width = 200;
-            // 
-            // BaseHourlyRate
-            // 
-            this.BaseHourlyRate.HeaderText = "Saatlik Kazanç";
-            this.BaseHourlyRate.Name = "BaseHourlyRate";
-            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(919, 492);
             this.Controls.Add(this.btn_Main);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.dataGridView1);
+            this.Name = "EmployeeForm";
             this.Text = "Çalışanlar";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

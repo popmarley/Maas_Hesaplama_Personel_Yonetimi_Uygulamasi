@@ -55,7 +55,7 @@
             this.btn_AddShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_AddShift.Location = new System.Drawing.Point(12, 153);
             this.btn_AddShift.Name = "btn_AddShift";
-            this.btn_AddShift.Size = new System.Drawing.Size(287, 41);
+            this.btn_AddShift.Size = new System.Drawing.Size(287, 52);
             this.btn_AddShift.TabIndex = 0;
             this.btn_AddShift.Text = "Veriyi Gir";
             this.btn_AddShift.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.groupBox1.Controls.Add(this.cb_EmployeeList);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dt_Date);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(31, 154);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 220);
@@ -176,6 +176,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ShiftId,
@@ -219,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(977, 606);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);

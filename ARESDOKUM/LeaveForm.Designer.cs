@@ -47,14 +47,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btn_Main = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cb_EmployeeList
             // 
             this.cb_EmployeeList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cb_EmployeeList.FormattingEnabled = true;
-            this.cb_EmployeeList.Location = new System.Drawing.Point(139, 182);
+            this.cb_EmployeeList.Location = new System.Drawing.Point(133, 49);
             this.cb_EmployeeList.Name = "cb_EmployeeList";
             this.cb_EmployeeList.Size = new System.Drawing.Size(200, 24);
             this.cb_EmployeeList.TabIndex = 0;
@@ -62,7 +64,7 @@
             // dt_StartDate
             // 
             this.dt_StartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dt_StartDate.Location = new System.Drawing.Point(139, 222);
+            this.dt_StartDate.Location = new System.Drawing.Point(133, 89);
             this.dt_StartDate.Name = "dt_StartDate";
             this.dt_StartDate.Size = new System.Drawing.Size(200, 22);
             this.dt_StartDate.TabIndex = 1;
@@ -71,7 +73,7 @@
             // dt_EndDate
             // 
             this.dt_EndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dt_EndDate.Location = new System.Drawing.Point(139, 261);
+            this.dt_EndDate.Location = new System.Drawing.Point(133, 128);
             this.dt_EndDate.Name = "dt_EndDate";
             this.dt_EndDate.Size = new System.Drawing.Size(200, 22);
             this.dt_EndDate.TabIndex = 2;
@@ -79,9 +81,9 @@
             // btn_AddLeave
             // 
             this.btn_AddLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_AddLeave.Location = new System.Drawing.Point(137, 385);
+            this.btn_AddLeave.Location = new System.Drawing.Point(131, 252);
             this.btn_AddLeave.Name = "btn_AddLeave";
-            this.btn_AddLeave.Size = new System.Drawing.Size(200, 38);
+            this.btn_AddLeave.Size = new System.Drawing.Size(200, 47);
             this.btn_AddLeave.TabIndex = 3;
             this.btn_AddLeave.Text = "İzin Gir";
             this.btn_AddLeave.UseVisualStyleBackColor = true;
@@ -90,7 +92,7 @@
             // rTxt_Reason
             // 
             this.rTxt_Reason.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rTxt_Reason.Location = new System.Drawing.Point(137, 298);
+            this.rTxt_Reason.Location = new System.Drawing.Point(131, 165);
             this.rTxt_Reason.Name = "rTxt_Reason";
             this.rTxt_Reason.Size = new System.Drawing.Size(200, 70);
             this.rTxt_Reason.TabIndex = 4;
@@ -98,6 +100,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LeaveId,
@@ -154,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(58, 185);
+            this.label2.Location = new System.Drawing.Point(52, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 7;
@@ -164,7 +168,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(9, 225);
+            this.label3.Location = new System.Drawing.Point(3, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 8;
@@ -174,7 +178,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(42, 264);
+            this.label4.Location = new System.Drawing.Point(36, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 9;
@@ -184,7 +188,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(57, 301);
+            this.label5.Location = new System.Drawing.Point(51, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 10;
@@ -218,28 +222,42 @@
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cb_EmployeeList);
+            this.groupBox1.Controls.Add(this.dt_StartDate);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.dt_EndDate);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btn_AddLeave);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.rTxt_Reason);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 92);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(338, 370);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "İzin Talebi Gir";
+            // 
             // LeaveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1149, 553);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Main);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.rTxt_Reason);
-            this.Controls.Add(this.btn_AddLeave);
-            this.Controls.Add(this.dt_EndDate);
-            this.Controls.Add(this.dt_StartDate);
-            this.Controls.Add(this.cb_EmployeeList);
             this.Name = "LeaveForm";
             this.Text = "İzin Talepleri";
             this.Load += new System.EventHandler(this.LeaveForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Reason;
         private System.Windows.Forms.Button btn_Main;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

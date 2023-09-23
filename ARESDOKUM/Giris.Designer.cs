@@ -100,7 +100,7 @@
             this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Exit.FlatAppearance.BorderSize = 0;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Exit.Location = new System.Drawing.Point(401, 353);
+            this.btn_Exit.Location = new System.Drawing.Point(2, 344);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(86, 73);
             this.btn_Exit.TabIndex = 13;
@@ -124,7 +124,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Giris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Giris";
+            this.Text = "Ares Döküm | PYS";
             this.ResumeLayout(false);
             this.PerformLayout();
 
