@@ -147,6 +147,7 @@ namespace ARESDOKUM
                 {
                     lbl_CheckPaymentMade.Text = "Belirtilen tarihler arasında ödemesi yapılmış bir vardiya bulunmamaktadır.";
                     lbl_CheckPaymentMade.ForeColor = Color.Green;
+                    btn_MakePayment.Visible = true;
                 }
             }
         }

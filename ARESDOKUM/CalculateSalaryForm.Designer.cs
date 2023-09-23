@@ -201,6 +201,7 @@
             this.btn_MakePayment.TabIndex = 31;
             this.btn_MakePayment.Text = "Ödeme Yap";
             this.btn_MakePayment.UseVisualStyleBackColor = true;
+            this.btn_MakePayment.Visible = false;
             this.btn_MakePayment.Click += new System.EventHandler(this.btn_MakePayment_Click);
             // 
             // rTxt_Description

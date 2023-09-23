@@ -191,7 +191,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "EmployeeForm";
             this.Text = "Çalışanlar";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
