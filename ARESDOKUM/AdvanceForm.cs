@@ -32,7 +32,7 @@ namespace ARESDOKUM
                     {
                         a.AdvanceId,
                         EmployeeName = a.Employee.Name, // İlişkili Employee'in adı
-                        a.Amount,
+                        Amount = $"{a.Amount:C}", // TL simgesi eklemek için Amount'u biçimlendirin
                         a.RequestDate
                     })
                     .ToList();
@@ -51,8 +51,10 @@ namespace ARESDOKUM
                     );
                 }
             }
-
         }
+
+        
+
 
         private void btn_Exit_Click(object sender, EventArgs e) => Application.Exit();
 
@@ -112,6 +114,21 @@ namespace ARESDOKUM
                 cb_EmployeeList.DataSource = employees;
             }
             LoadAdvanceList();
+        }
+
+        private void txt_Amount_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            // Eğer girilen karakter bir sayı, virgül veya nokta değilse ve geri tuşu (Backspace) değilse, işlemi iptal et
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // Birden fazla virgül veya nokta girişini önlemek için kontrol et
+            if ((e.KeyChar == '.' || e.KeyChar == ',') && txt_Amount.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
