@@ -234,14 +234,14 @@
 			this.HoursWorked.HeaderText = "Çalıştığı Saat";
 			this.HoursWorked.MinimumWidth = 6;
 			this.HoursWorked.Name = "HoursWorked";
-			this.HoursWorked.Width = 125;
+			this.HoursWorked.Width = 75;
 			// 
 			// PaymentMade
 			// 
 			this.PaymentMade.HeaderText = "Ödenme Durumu";
 			this.PaymentMade.MinimumWidth = 6;
 			this.PaymentMade.Name = "PaymentMade";
-			this.PaymentMade.Width = 125;
+			this.PaymentMade.Width = 85;
 			// 
 			// ShiftForm
 			// 
@@ -254,10 +254,12 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btn_Exit);
 			this.Controls.Add(this.btn_Main);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "ShiftForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Giriş Çıkış Saatleri";
+			this.Text = "Ares Döküm | PYS";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.ShiftForm_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
@@ -281,10 +283,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ShiftId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoursWorked;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMade;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn ShiftId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+		private System.Windows.Forms.DataGridViewTextBoxColumn HoursWorked;
+		private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMade;
+	}
 }
