@@ -35,6 +35,7 @@
             this.btn_ExittoMain = new System.Windows.Forms.Button();
             this.btn_Advance = new System.Windows.Forms.Button();
             this.btn_CalculateSalary = new System.Windows.Forms.Button();
+            this.btn_Payments = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Employee
@@ -101,11 +102,22 @@
             this.btn_CalculateSalary.UseVisualStyleBackColor = true;
             this.btn_CalculateSalary.Click += new System.EventHandler(this.btn_CalculateSalary_Click);
             // 
+            // btn_Payments
+            // 
+            this.btn_Payments.Location = new System.Drawing.Point(993, 288);
+            this.btn_Payments.Name = "btn_Payments";
+            this.btn_Payments.Size = new System.Drawing.Size(203, 53);
+            this.btn_Payments.TabIndex = 16;
+            this.btn_Payments.Text = "Ödenenler";
+            this.btn_Payments.UseVisualStyleBackColor = true;
+            this.btn_Payments.Click += new System.EventHandler(this.btn_Payments_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1219, 537);
+            this.Controls.Add(this.btn_Payments);
             this.Controls.Add(this.btn_CalculateSalary);
             this.Controls.Add(this.btn_Advance);
             this.Controls.Add(this.btn_ExittoMain);
@@ -126,5 +138,6 @@
         private System.Windows.Forms.Button btn_ExittoMain;
         private System.Windows.Forms.Button btn_Advance;
         private System.Windows.Forms.Button btn_CalculateSalary;
+        private System.Windows.Forms.Button btn_Payments;
     }
 }
