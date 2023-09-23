@@ -46,6 +46,15 @@ namespace ARESDOKUM
         private void CalculateSalaryForm_Load(object sender, EventArgs e)
         {
             LoadEmployeeList();
+
+            DateTime currentDate = DateTime.Today;
+
+            // dt_EndDate'e bugünün tarihini ata
+            dt_EndDate.Value = currentDate;
+
+            // dt_StartDate'e 1 ay önceki tarihi ata
+            DateTime oneMonthAgo = currentDate.AddMonths(-1);
+            dt_StartDate.Value = oneMonthAgo;
         }
 
         private void btn_CalculateSalary_Click(object sender, EventArgs e)
