@@ -40,6 +40,10 @@
             this.btn_CalculateSalary = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_Salary = new System.Windows.Forms.Label();
+            this.lbl_Advance = new System.Windows.Forms.Label();
+            this.lbl_Response = new System.Windows.Forms.Label();
+            this.btn_MakePayment = new System.Windows.Forms.Button();
+            this.rTxt_Description = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btn_Main
@@ -144,28 +148,72 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(497, 84);
+            this.label4.Location = new System.Drawing.Point(508, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 20);
+            this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Ödenecek Tutar";
+            this.label4.Text = "Maaş:";
             // 
             // lbl_Salary
             // 
             this.lbl_Salary.AutoSize = true;
             this.lbl_Salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_Salary.ForeColor = System.Drawing.Color.Green;
-            this.lbl_Salary.Location = new System.Drawing.Point(639, 84);
+            this.lbl_Salary.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Salary.Location = new System.Drawing.Point(566, 85);
             this.lbl_Salary.Name = "lbl_Salary";
             this.lbl_Salary.Size = new System.Drawing.Size(39, 20);
             this.lbl_Salary.TabIndex = 27;
             this.lbl_Salary.Text = "000";
+            // 
+            // lbl_Advance
+            // 
+            this.lbl_Advance.AutoSize = true;
+            this.lbl_Advance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Advance.Location = new System.Drawing.Point(509, 128);
+            this.lbl_Advance.Name = "lbl_Advance";
+            this.lbl_Advance.Size = new System.Drawing.Size(57, 16);
+            this.lbl_Advance.TabIndex = 29;
+            this.lbl_Advance.Text = "----------";
+            // 
+            // lbl_Response
+            // 
+            this.lbl_Response.AutoSize = true;
+            this.lbl_Response.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Response.ForeColor = System.Drawing.Color.Green;
+            this.lbl_Response.Location = new System.Drawing.Point(508, 161);
+            this.lbl_Response.Name = "lbl_Response";
+            this.lbl_Response.Size = new System.Drawing.Size(63, 20);
+            this.lbl_Response.TabIndex = 30;
+            this.lbl_Response.Text = "---------";
+            // 
+            // btn_MakePayment
+            // 
+            this.btn_MakePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_MakePayment.Location = new System.Drawing.Point(496, 196);
+            this.btn_MakePayment.Name = "btn_MakePayment";
+            this.btn_MakePayment.Size = new System.Drawing.Size(354, 51);
+            this.btn_MakePayment.TabIndex = 31;
+            this.btn_MakePayment.Text = "Ödeme Yap";
+            this.btn_MakePayment.UseVisualStyleBackColor = true;
+            this.btn_MakePayment.Click += new System.EventHandler(this.btn_MakePayment_Click);
+            // 
+            // rTxt_Description
+            // 
+            this.rTxt_Description.Location = new System.Drawing.Point(671, 87);
+            this.rTxt_Description.Name = "rTxt_Description";
+            this.rTxt_Description.Size = new System.Drawing.Size(179, 96);
+            this.rTxt_Description.TabIndex = 32;
+            this.rTxt_Description.Text = "";
             // 
             // CalculateSalaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 598);
+            this.Controls.Add(this.rTxt_Description);
+            this.Controls.Add(this.btn_MakePayment);
+            this.Controls.Add(this.lbl_Response);
+            this.Controls.Add(this.lbl_Advance);
             this.Controls.Add(this.lbl_Salary);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_CalculateSalary);
@@ -198,5 +246,9 @@
         private System.Windows.Forms.Button btn_CalculateSalary;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_Salary;
+        private System.Windows.Forms.Label lbl_Advance;
+        private System.Windows.Forms.Label lbl_Response;
+        private System.Windows.Forms.Button btn_MakePayment;
+        private System.Windows.Forms.RichTextBox rTxt_Description;
     }
 }

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -86,12 +88,70 @@ namespace ARESDOKUM
                     totalSalary += hourlyRate * shift.HoursWorked; // Toplam ücreti hesaplayın
                 }
 
+                // Eğer avans talebi varsa, talep miktarını hesaplayın
+                var advances = context.Advances
+                    .Where(a => a.EmployeeId == selectedEmployee.EmployeeId &&
+                                a.RequestDate >= startDate &&
+                                a.RequestDate <= endDate)
+                    .ToList();
+
+                decimal totalAdvance = advances.Sum(a => a.Amount);
+
                 // Maaşı sonucu label'e yazdırın
                 lbl_Salary.Text = $"{totalSalary:C}";
+
+                // Eğer talep varsa, talep miktarını lbl_Advance'e yazın
+                if (advances.Any())
+                {
+                    string advanceMessage = $"{selectedEmployee.Name} ";
+                    foreach (var advance in advances)
+                    {
+                        advanceMessage += $"{advance.RequestDate.ToShortDateString()} tarihinde {advance.Amount:C} Avans Ödenmiştir.\n";
+                    }
+
+                    lbl_Advance.Text = advanceMessage;
+                }
+                else
+                {
+                    lbl_Advance.Text = "Belirtilen Tarihler Arasında İşçiye Avans Ödemesi Yapılmamıştır.";
+                }
+
+                // Maaştan avansı çıkarıp sonucu lbl_Response'e yazın
+                decimal netSalary = totalSalary - totalAdvance;
+                lbl_Response.Text = $"{netSalary:C}";
             }
         }
 
+        private void btn_MakePayment_Click(object sender, EventArgs e)
+        {
+            // Seçilen çalışanı alın
+            Employee selectedEmployee = (Employee)cb_EmployeeList.SelectedItem;
 
+            // Ödenen tutarı lbl_Response'dan alın
+            decimal amountPaid = decimal.Parse(lbl_Response.Text, NumberStyles.Currency);
 
+            // Ödeme tarihini şu anki tarih olarak alın
+            DateTime paymentDate = DateTime.Now;
+
+            // Ödeme açıklamasını istediğiniz şekilde alın (örneğin bir metin kutusu kullanabilirsiniz)
+            string description = rTxt_Description.Text; // Örnek bir açıklama
+
+            using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
+            {
+                // Payment tablosuna yeni bir ödeme kaydı ekleyin
+                Payment payment = new Payment
+                {
+                    EmployeeId = selectedEmployee.EmployeeId,
+                    Amount = amountPaid,
+                    PaymentDate = paymentDate,
+                    Description = description
+                };
+
+                context.Payments.Add(payment);
+                context.SaveChanges();
+
+                MessageBox.Show("Ödeme başarıyla kaydedildi.");
+            }
+        }
     }
 }
