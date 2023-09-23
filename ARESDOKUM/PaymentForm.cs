@@ -43,15 +43,19 @@ namespace ARESDOKUM
                 // Payment verilerini DataGridView'e ekleyin
                 foreach (var payment in payments)
                 {
-                    dataGridView1.Rows.Add(
+                    DataGridViewRow row = dataGridView1.Rows[dataGridView1.Rows.Add(
                         payment.PaymentId,
                         payment.Employee.Name, // İşçinin adını kullanın
-                        payment.Amount,
-                        payment.PaymentDate,
+                        $"{payment.Amount:C}", // Amount'u para birimi formatında yazdırın
+                        payment.PaymentDate.ToString("dd.MM.yyyy"), // Tarihi belirlediğiniz biçimde yazdırın
                         payment.Description
-                    );
+                    )];
+
+                    // Ödeme yapılan tutarı yeşil renkte yazdırın
+                    row.Cells[2].Style.ForeColor = Color.Green;
                 }
             }
+
 
         }
     }
