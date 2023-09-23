@@ -53,14 +53,18 @@ namespace ARESDOKUM
                 // Employee verilerini DataGridView'e ekleyin
                 foreach (var employee in employees)
                 {
+                    // BaseHourlyRate'i TL sembolü ile biçimlendirin
+                    string hourlyRateWithSymbol = $"{employee.BaseHourlyRate:C}";
+
                     dataGridView1.Rows.Add(
                         employee.EmployeeId,
                         employee.Name,
-                        employee.BaseHourlyRate
+                        hourlyRateWithSymbol
                     );
                 }
             }
         }
+
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
@@ -82,6 +86,36 @@ namespace ARESDOKUM
             Main main = new Main();
             main.Show();
             this.Close();
+        }
+
+        private void txt_AddEmployee_Name_TextChanged(object sender, EventArgs e)
+        {
+            string input = txt_AddEmployee_Name.Text;
+
+            // TextBox'a girilen metni karakter karakter kontrol edin
+            foreach (char c in input)
+            {
+                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                {
+                    // Eğer girilen karakter harf veya boşluk karakteri değilse, bu karakteri kaldırın
+                    txt_AddEmployee_Name.Text = txt_AddEmployee_Name.Text.Replace(c.ToString(), string.Empty);
+                }
+            }
+        }
+
+        private void txt_AddEmployee_HourlyRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Sadece sayıları ve virgülü ve kontrol tuşlarını (örneğin Backspace) kabul edelim
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true; // Bu karakteri işleme alma
+            }
+
+            // Sadece bir virgül girişine izin verelim
+            if (e.KeyChar == ',' && (sender as TextBox).Text.Contains(','))
+            {
+                e.Handled = true; // Birden fazla virgül girişine izin verme
+            }
         }
     }
 }
