@@ -39,6 +39,7 @@
 			// 
 			// txt_UserName
 			// 
+			this.txt_UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txt_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.txt_UserName.Location = new System.Drawing.Point(269, 225);
 			this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -48,6 +49,7 @@
 			// 
 			// txt_UserPassword
 			// 
+			this.txt_UserPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txt_UserPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.txt_UserPassword.Location = new System.Drawing.Point(271, 278);
 			this.txt_UserPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -57,6 +59,7 @@
 			// 
 			// btn_Giris
 			// 
+			this.btn_Giris.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Giris.BackColor = System.Drawing.Color.YellowGreen;
 			this.btn_Giris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.btn_Giris.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -71,6 +74,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -82,6 +86,7 @@
 			// 
 			// label2
 			// 
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.Color.Transparent;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -93,6 +98,7 @@
 			// 
 			// btn_Exit
 			// 
+			this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.BackgroundImage")));
 			this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;

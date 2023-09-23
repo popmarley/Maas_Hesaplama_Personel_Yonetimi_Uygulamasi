@@ -46,6 +46,7 @@
 			// 
 			// btn_Employee
 			// 
+			this.btn_Employee.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Employee.BackColor = System.Drawing.Color.White;
 			this.btn_Employee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Employee.BackgroundImage")));
 			this.btn_Employee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -59,6 +60,7 @@
 			// 
 			// btn_Shift
 			// 
+			this.btn_Shift.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Shift.BackColor = System.Drawing.Color.White;
 			this.btn_Shift.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Shift.BackgroundImage")));
 			this.btn_Shift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -72,6 +74,7 @@
 			// 
 			// btn_Leaves
 			// 
+			this.btn_Leaves.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Leaves.BackColor = System.Drawing.Color.White;
 			this.btn_Leaves.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Leaves.BackgroundImage")));
 			this.btn_Leaves.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -85,6 +88,7 @@
 			// 
 			// btn_ExittoMain
 			// 
+			this.btn_ExittoMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_ExittoMain.BackColor = System.Drawing.Color.Transparent;
 			this.btn_ExittoMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_ExittoMain.BackgroundImage")));
 			this.btn_ExittoMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -100,6 +104,7 @@
 			// 
 			// btn_Advance
 			// 
+			this.btn_Advance.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Advance.BackColor = System.Drawing.Color.White;
 			this.btn_Advance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Advance.BackgroundImage")));
 			this.btn_Advance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -113,6 +118,7 @@
 			// 
 			// btn_Payments
 			// 
+			this.btn_Payments.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_Payments.BackColor = System.Drawing.Color.White;
 			this.btn_Payments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Payments.BackgroundImage")));
 			this.btn_Payments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -126,6 +132,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label1.Location = new System.Drawing.Point(299, 90);
@@ -137,6 +144,7 @@
 			// 
 			// label2
 			// 
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label2.Location = new System.Drawing.Point(617, 90);
@@ -148,6 +156,7 @@
 			// 
 			// label3
 			// 
+			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label3.Location = new System.Drawing.Point(872, 90);
@@ -159,6 +168,7 @@
 			// 
 			// label4
 			// 
+			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label4.Location = new System.Drawing.Point(329, 494);
@@ -170,6 +180,7 @@
 			// 
 			// label5
 			// 
+			this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label5.Location = new System.Drawing.Point(633, 494);
@@ -181,6 +192,7 @@
 			// 
 			// label6
 			// 
+			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label6.Location = new System.Drawing.Point(896, 494);
@@ -192,6 +204,7 @@
 			// 
 			// btn_CalculateSalary
 			// 
+			this.btn_CalculateSalary.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_CalculateSalary.BackColor = System.Drawing.Color.White;
 			this.btn_CalculateSalary.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_CalculateSalary.BackgroundImage")));
 			this.btn_CalculateSalary.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;

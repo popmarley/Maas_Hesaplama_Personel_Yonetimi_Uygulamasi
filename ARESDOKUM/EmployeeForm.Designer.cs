@@ -50,7 +50,7 @@
 			// 
 			this.txt_AddEmployee_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.txt_AddEmployee_Name.Location = new System.Drawing.Point(155, 49);
-			this.txt_AddEmployee_Name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txt_AddEmployee_Name.Margin = new System.Windows.Forms.Padding(4);
 			this.txt_AddEmployee_Name.Name = "txt_AddEmployee_Name";
 			this.txt_AddEmployee_Name.Size = new System.Drawing.Size(184, 26);
 			this.txt_AddEmployee_Name.TabIndex = 0;
@@ -59,7 +59,7 @@
 			// 
 			this.txt_AddEmployee_HourlyRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.txt_AddEmployee_HourlyRate.Location = new System.Drawing.Point(155, 94);
-			this.txt_AddEmployee_HourlyRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.txt_AddEmployee_HourlyRate.Margin = new System.Windows.Forms.Padding(4);
 			this.txt_AddEmployee_HourlyRate.Name = "txt_AddEmployee_HourlyRate";
 			this.txt_AddEmployee_HourlyRate.Size = new System.Drawing.Size(184, 26);
 			this.txt_AddEmployee_HourlyRate.TabIndex = 1;
@@ -68,7 +68,7 @@
 			// 
 			this.btn_AddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.btn_AddEmployee.Location = new System.Drawing.Point(40, 144);
-			this.btn_AddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_AddEmployee.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_AddEmployee.Name = "btn_AddEmployee";
 			this.btn_AddEmployee.Size = new System.Drawing.Size(300, 49);
 			this.btn_AddEmployee.TabIndex = 2;
@@ -78,6 +78,7 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -86,7 +87,7 @@
             this.Name,
             this.BaseHourlyRate});
 			this.dataGridView1.Location = new System.Drawing.Point(540, 15);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
 			this.dataGridView1.Size = new System.Drawing.Size(537, 553);
@@ -115,13 +116,14 @@
 			// 
 			// btn_Exit
 			// 
+			this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.BackgroundImage")));
 			this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Exit.FlatAppearance.BorderSize = 0;
 			this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btn_Exit.Location = new System.Drawing.Point(131, 501);
-			this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btn_Exit.Margin = new System.Windows.Forms.Padding(4);
 			this.btn_Exit.Name = "btn_Exit";
 			this.btn_Exit.Size = new System.Drawing.Size(115, 90);
 			this.btn_Exit.TabIndex = 13;
@@ -130,6 +132,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label1.Location = new System.Drawing.Point(123, 15);
@@ -164,6 +167,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.groupBox1.Controls.Add(this.txt_AddEmployee_Name);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txt_AddEmployee_HourlyRate);
@@ -171,9 +175,9 @@
 			this.groupBox1.Controls.Add(this.btn_AddEmployee);
 			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.groupBox1.Location = new System.Drawing.Point(29, 97);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Size = new System.Drawing.Size(375, 215);
 			this.groupBox1.TabIndex = 17;
 			this.groupBox1.TabStop = false;
@@ -181,6 +185,7 @@
 			// 
 			// btn_Main
 			// 
+			this.btn_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Main.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Main.BackgroundImage")));
 			this.btn_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -207,8 +212,8 @@
 			this.Controls.Add(this.btn_Exit);
 			this.Controls.Add(this.dataGridView1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.Name = "EmployeeForm";
+			this.Margin = new System.Windows.Forms.Padding(4);
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ares Döküm | PYS";
 			this.Load += new System.EventHandler(this.EmployeeForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

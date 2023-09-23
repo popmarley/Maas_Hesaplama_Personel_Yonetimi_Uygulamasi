@@ -54,6 +54,7 @@
 			// 
 			// btn_Main
 			// 
+			this.btn_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Main.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Main.BackgroundImage")));
 			this.btn_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -70,6 +71,7 @@
 			// 
 			// btn_Exit
 			// 
+			this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.BackgroundImage")));
 			this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -160,6 +162,7 @@
 			// 
 			// label4
 			// 
+			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label4.Location = new System.Drawing.Point(561, 150);
@@ -171,6 +174,7 @@
 			// 
 			// lbl_Salary
 			// 
+			this.lbl_Salary.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_Salary.AutoSize = true;
 			this.lbl_Salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.lbl_Salary.ForeColor = System.Drawing.Color.Black;
@@ -183,6 +187,7 @@
 			// 
 			// lbl_Advance
 			// 
+			this.lbl_Advance.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_Advance.AutoSize = true;
 			this.lbl_Advance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.lbl_Advance.Location = new System.Drawing.Point(564, 199);
@@ -194,6 +199,7 @@
 			// 
 			// lbl_Response
 			// 
+			this.lbl_Response.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_Response.AutoSize = true;
 			this.lbl_Response.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.lbl_Response.ForeColor = System.Drawing.Color.Green;
@@ -206,6 +212,7 @@
 			// 
 			// btn_MakePayment
 			// 
+			this.btn_MakePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btn_MakePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.btn_MakePayment.Location = new System.Drawing.Point(565, 406);
 			this.btn_MakePayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -219,6 +226,7 @@
 			// 
 			// rTxt_Description
 			// 
+			this.rTxt_Description.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.rTxt_Description.Location = new System.Drawing.Point(565, 298);
 			this.rTxt_Description.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.rTxt_Description.Name = "rTxt_Description";
@@ -228,6 +236,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.cb_EmployeeList);
 			this.groupBox1.Controls.Add(this.label1);
@@ -247,6 +256,7 @@
 			// 
 			// label5
 			// 
+			this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label5.Location = new System.Drawing.Point(36, 70);
@@ -258,6 +268,7 @@
 			// 
 			// label6
 			// 
+			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label6.Location = new System.Drawing.Point(565, 271);
@@ -269,6 +280,7 @@
 			// 
 			// label7
 			// 
+			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label7.Location = new System.Drawing.Point(564, 233);
@@ -280,15 +292,16 @@
 			// 
 			// lbl_CheckPaymentMade
 			// 
+			this.lbl_CheckPaymentMade.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_CheckPaymentMade.AutoSize = true;
 			this.lbl_CheckPaymentMade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.lbl_CheckPaymentMade.ForeColor = System.Drawing.Color.Red;
 			this.lbl_CheckPaymentMade.Location = new System.Drawing.Point(17, 513);
 			this.lbl_CheckPaymentMade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_CheckPaymentMade.Name = "lbl_CheckPaymentMade";
-			this.lbl_CheckPaymentMade.Size = new System.Drawing.Size(170, 20);
+			this.lbl_CheckPaymentMade.Size = new System.Drawing.Size(57, 20);
 			this.lbl_CheckPaymentMade.TabIndex = 36;
-			this.lbl_CheckPaymentMade.Text = "-----------------------";
+			this.lbl_CheckPaymentMade.Text = "ㅤㅤㅤㅤ";
 			// 
 			// CalculateSalaryForm
 			// 
@@ -312,6 +325,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "CalculateSalaryForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ares Döküm | PYS";
 			this.Load += new System.EventHandler(this.CalculateSalaryForm_Load);
 			this.groupBox1.ResumeLayout(false);

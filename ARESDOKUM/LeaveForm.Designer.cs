@@ -105,6 +105,7 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -114,7 +115,7 @@
             this.StartDate,
             this.EndDate,
             this.Reason});
-			this.dataGridView1.Location = new System.Drawing.Point(489, 15);
+			this.dataGridView1.Location = new System.Drawing.Point(489, 13);
 			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
@@ -158,6 +159,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label1.Location = new System.Drawing.Point(73, 15);
@@ -213,6 +215,7 @@
 			// 
 			// btn_Main
 			// 
+			this.btn_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Main.BackgroundImage")));
 			this.btn_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_Main.FlatAppearance.BorderSize = 0;
@@ -228,6 +231,7 @@
 			// 
 			// btn_Exit
 			// 
+			this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.BackgroundImage")));
 			this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.btn_Exit.FlatAppearance.BorderSize = 0;
@@ -242,6 +246,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.cb_EmployeeList);
 			this.groupBox1.Controls.Add(this.dt_StartDate);
@@ -275,6 +280,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "LeaveForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ares Döküm | PYS";
 			this.Load += new System.EventHandler(this.LeaveForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

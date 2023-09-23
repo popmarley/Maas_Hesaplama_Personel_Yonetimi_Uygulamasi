@@ -51,6 +51,7 @@
 			// 
 			// btn_Main
 			// 
+			this.btn_Main.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Main.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Main.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Main.BackgroundImage")));
 			this.btn_Main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -67,6 +68,7 @@
 			// 
 			// btn_Exit
 			// 
+			this.btn_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btn_Exit.BackColor = System.Drawing.Color.Transparent;
 			this.btn_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.BackgroundImage")));
 			this.btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -82,6 +84,7 @@
 			// 
 			// label1
 			// 
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
 			this.label1.Location = new System.Drawing.Point(104, 47);
@@ -154,6 +157,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.groupBox1.Controls.Add(this.btn_AddAdvance);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.label4);
@@ -184,6 +188,7 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
 			this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -196,7 +201,7 @@
 			this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(576, 562);
+			this.dataGridView1.Size = new System.Drawing.Size(670, 562);
 			this.dataGridView1.TabIndex = 29;
 			// 
 			// AdvanceId
@@ -225,7 +230,7 @@
 			this.RequestDate.HeaderText = "Avans Tarihi";
 			this.RequestDate.MinimumWidth = 6;
 			this.RequestDate.Name = "RequestDate";
-			this.RequestDate.Width = 125;
+			this.RequestDate.Width = 150;
 			// 
 			// AdvanceForm
 			// 
@@ -241,6 +246,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "AdvanceForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Ares Döküm | PYS";
 			this.Load += new System.EventHandler(this.AdvanceForm_Load);
 			this.groupBox1.ResumeLayout(false);
@@ -265,9 +271,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_AddAdvance;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdvanceId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RequestDate;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn AdvanceId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+		private System.Windows.Forms.DataGridViewTextBoxColumn RequestDate;
+	}
 }
