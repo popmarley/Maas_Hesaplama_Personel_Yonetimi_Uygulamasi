@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbl_CheckPaymentMade = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -257,11 +258,23 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Ödenecek Tutar:";
             // 
+            // lbl_CheckPaymentMade
+            // 
+            this.lbl_CheckPaymentMade.AutoSize = true;
+            this.lbl_CheckPaymentMade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_CheckPaymentMade.ForeColor = System.Drawing.Color.Red;
+            this.lbl_CheckPaymentMade.Location = new System.Drawing.Point(13, 417);
+            this.lbl_CheckPaymentMade.Name = "lbl_CheckPaymentMade";
+            this.lbl_CheckPaymentMade.Size = new System.Drawing.Size(122, 16);
+            this.lbl_CheckPaymentMade.TabIndex = 36;
+            this.lbl_CheckPaymentMade.Text = "-----------------------";
+            // 
             // CalculateSalaryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1146, 598);
+            this.Controls.Add(this.lbl_CheckPaymentMade);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
@@ -305,5 +318,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_CheckPaymentMade;
     }
 }

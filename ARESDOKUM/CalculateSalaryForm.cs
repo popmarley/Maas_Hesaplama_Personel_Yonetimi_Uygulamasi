@@ -128,6 +128,24 @@ namespace ARESDOKUM
                 // Maaştan avansı çıkarıp sonucu lbl_Response'e yazın
                 decimal netSalary = totalSalary - totalAdvance;
                 lbl_Response.Text = $"{netSalary:C}";
+
+
+                // Ödemesi yapılmış shift varsa, detaylı bilgiyi lbl_CheckPaymentMade'e yazın
+                bool isPaymentMade = shifts.Any(s => s.PaymentMade);
+                if (isPaymentMade)
+                {
+                    string paymentMadeDetails = "Aşağıdaki tarihlerde ödeme yapılmış vardiyalar bulunmaktadır. LÜTFEN TARİHLERİ DÜZENLEYİNİZ\n";
+                    foreach (var shift in shifts.Where(s => s.PaymentMade))
+                    {
+                        paymentMadeDetails += $"Tarih: {shift.Date.ToShortDateString()}, Çalışma Saati: {shift.HoursWorked} saat\n";
+                    }
+
+                    lbl_CheckPaymentMade.Text = paymentMadeDetails;
+                }
+                else
+                {
+                    lbl_CheckPaymentMade.Text = "Belirtilen tarihler arasında ödemesi yapılmış bir vardiya bulunmamaktadır.";
+                }
             }
         }
 
@@ -137,7 +155,12 @@ namespace ARESDOKUM
             Employee selectedEmployee = (Employee)cb_EmployeeList.SelectedItem;
 
             // Ödenen tutarı lbl_Response'dan alın
-            decimal amountPaid = decimal.Parse(lbl_Response.Text, NumberStyles.Currency);
+            decimal amountPaid;
+            if (!decimal.TryParse(lbl_Response.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out amountPaid))
+            {
+                MessageBox.Show("Geçerli bir ödeme miktarı belirtilmedi.");
+                return;
+            }
 
             // Ödeme tarihini şu anki tarih olarak alın
             DateTime paymentDate = DateTime.Now;
@@ -157,10 +180,25 @@ namespace ARESDOKUM
                 };
 
                 context.Payments.Add(payment);
+
+                // Ödeme işlemi gerçekleştirdikten sonra Shift tablosundaki PaymentMade değerlerini güncelle
+                DateTime startDate = dt_StartDate.Value.Date;
+                DateTime endDate = dt_EndDate.Value.Date;
+                var shiftsToUpdate = context.Shifts
+                    .Where(s => s.EmployeeId == selectedEmployee.EmployeeId && s.Date >= startDate && s.Date <= endDate)
+                    .ToList();
+
+                foreach (var shift in shiftsToUpdate)
+                {
+                    shift.PaymentMade = true;
+                }
+
+                // Değişiklikleri veritabanına kaydedin
                 context.SaveChanges();
 
-                MessageBox.Show("Ödeme başarıyla kaydedildi.");
+                MessageBox.Show("Ödeme başarıyla kaydedildi ve Shift kayıtları güncellendi.");
             }
         }
+
     }
 }

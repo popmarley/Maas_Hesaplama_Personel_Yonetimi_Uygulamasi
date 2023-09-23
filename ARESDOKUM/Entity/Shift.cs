@@ -23,7 +23,7 @@ namespace ARESDOKUM.Entity
 		[Column(TypeName = "decimal(5, 2)")]
 		public decimal HoursWorked { get; set; }
 
-        [DefaultValue(false)] // PaymentMade alanının varsayılan değeri "false" olarak ayarlandı.
+        [DefaultValue(false)] 
         public bool PaymentMade { get; set; }
     }
 }
