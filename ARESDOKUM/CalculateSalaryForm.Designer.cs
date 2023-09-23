@@ -163,7 +163,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(421, 122);
+            this.label4.Location = new System.Drawing.Point(475, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 26;
@@ -175,7 +175,7 @@
             this.lbl_Salary.AutoSize = true;
             this.lbl_Salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_Salary.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Salary.Location = new System.Drawing.Point(479, 122);
+            this.lbl_Salary.Location = new System.Drawing.Point(533, 122);
             this.lbl_Salary.Name = "lbl_Salary";
             this.lbl_Salary.Size = new System.Drawing.Size(74, 20);
             this.lbl_Salary.TabIndex = 27;
@@ -186,7 +186,7 @@
             this.lbl_Advance.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Advance.AutoSize = true;
             this.lbl_Advance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_Advance.Location = new System.Drawing.Point(423, 162);
+            this.lbl_Advance.Location = new System.Drawing.Point(477, 162);
             this.lbl_Advance.Name = "lbl_Advance";
             this.lbl_Advance.Size = new System.Drawing.Size(127, 16);
             this.lbl_Advance.TabIndex = 29;
@@ -198,7 +198,7 @@
             this.lbl_Response.AutoSize = true;
             this.lbl_Response.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_Response.ForeColor = System.Drawing.Color.Green;
-            this.lbl_Response.Location = new System.Drawing.Point(571, 189);
+            this.lbl_Response.Location = new System.Drawing.Point(625, 189);
             this.lbl_Response.Name = "lbl_Response";
             this.lbl_Response.Size = new System.Drawing.Size(144, 20);
             this.lbl_Response.TabIndex = 30;
@@ -208,7 +208,7 @@
             // 
             this.btn_MakePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_MakePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_MakePayment.Location = new System.Drawing.Point(424, 330);
+            this.btn_MakePayment.Location = new System.Drawing.Point(478, 330);
             this.btn_MakePayment.Name = "btn_MakePayment";
             this.btn_MakePayment.Size = new System.Drawing.Size(274, 51);
             this.btn_MakePayment.TabIndex = 31;
@@ -220,7 +220,7 @@
             // rTxt_Description
             // 
             this.rTxt_Description.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rTxt_Description.Location = new System.Drawing.Point(424, 242);
+            this.rTxt_Description.Location = new System.Drawing.Point(478, 242);
             this.rTxt_Description.MaxLength = 255;
             this.rTxt_Description.Name = "rTxt_Description";
             this.rTxt_Description.Size = new System.Drawing.Size(274, 81);
@@ -238,7 +238,7 @@
             this.groupBox1.Controls.Add(this.dt_EndDate);
             this.groupBox1.Controls.Add(this.btn_CalculateSalary);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 171);
+            this.groupBox1.Location = new System.Drawing.Point(66, 171);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(391, 224);
             this.groupBox1.TabIndex = 33;
@@ -250,7 +250,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(27, 57);
+            this.label5.Location = new System.Drawing.Point(81, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(355, 34);
             this.label5.TabIndex = 34;
@@ -261,7 +261,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(424, 220);
+            this.label6.Location = new System.Drawing.Point(478, 220);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 35;
@@ -272,7 +272,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(423, 189);
+            this.label7.Location = new System.Drawing.Point(477, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 20);
             this.label7.TabIndex = 26;
@@ -284,7 +284,7 @@
             this.lbl_CheckPaymentMade.AutoSize = true;
             this.lbl_CheckPaymentMade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lbl_CheckPaymentMade.ForeColor = System.Drawing.Color.Red;
-            this.lbl_CheckPaymentMade.Location = new System.Drawing.Point(13, 417);
+            this.lbl_CheckPaymentMade.Location = new System.Drawing.Point(67, 417);
             this.lbl_CheckPaymentMade.Name = "lbl_CheckPaymentMade";
             this.lbl_CheckPaymentMade.Size = new System.Drawing.Size(51, 16);
             this.lbl_CheckPaymentMade.TabIndex = 36;
@@ -292,15 +292,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaymentId,
             this.EmployeeName,
             this.PaymentDate,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(742, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(775, 28);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(367, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(447, 405);
             this.dataGridView1.TabIndex = 37;
             // 
             // PaymentId
@@ -328,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1146, 598);
+            this.ClientSize = new System.Drawing.Size(1255, 598);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_CheckPaymentMade);
             this.Controls.Add(this.label6);
