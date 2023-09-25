@@ -233,6 +233,7 @@ namespace ARESDOKUM
 
                 MessageBox.Show("Ödeme başarıyla kaydedildi ve Shift kayıtları güncellendi.");
                 Reset();
+                LoadPaymentList();
             }
         }
 
@@ -249,5 +250,14 @@ namespace ARESDOKUM
             lbl_Salary.Text = "000";
         }
 
+        private void lbl_Advance_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_CheckPaymentMade_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

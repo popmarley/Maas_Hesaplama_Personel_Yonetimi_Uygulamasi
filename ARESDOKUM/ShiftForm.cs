@@ -55,10 +55,7 @@ namespace ARESDOKUM
                 }
             }
         }
-
-
-
-        private void ShiftForm_Load(object sender, EventArgs e)
+        private void LoadEmployeeList()
         {
             using (var context = new MyDbContext())
             {
@@ -69,6 +66,30 @@ namespace ARESDOKUM
                 cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
                 cb_EmployeeList.DataSource = employees;
             }
+
+            using (var context = new MyDbContext())
+            {
+                Employee allEmployees = new Employee
+                {
+                    EmployeeId = -1, // Özel bir değer atayabilirsiniz
+                    Name = "Tüm Çalışanlar" // Görünen metin
+                };
+
+                // Combobox'ı doldururken bu özel nesneyi de ekleyin.
+                var employees = context.Employees.ToList();
+                employees.Insert(0, allEmployees); // "Tüm Çalışanlar" seçeneğini en başa ekleyin.
+
+                // ComboBox'ı doldurun
+                cb_EmployeeListFilter.DisplayMember = "Name"; // ComboBox'ta görünen metin
+                cb_EmployeeListFilter.ValueMember = "EmployeeId"; // Seçilen değer
+                cb_EmployeeListFilter.DataSource = employees;
+            }
+        }
+
+
+        private void ShiftForm_Load(object sender, EventArgs e)
+        {
+            LoadEmployeeList();
             LoadShiftDataToDataGridView();
             AddButtonColumnsToDataGridView();
 
@@ -164,7 +185,6 @@ namespace ARESDOKUM
 			dataGridView1.Columns.Add(deleteButtonColumn);
         }
        
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			// Sütun indeksi geçerli bir indekse işaret ediyorsa
@@ -186,8 +206,24 @@ namespace ARESDOKUM
 				// Eğer tıklanan sütun "Düzenle" butonu ise
 				else if (dataGridView1.Columns[e.ColumnIndex].Name == "Duzenle")
 				{
-					
-				}
+                    // Seçilen satırı alın
+                    DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+
+                    // Satırdan gerekli verileri çıkarın
+                    int shiftId = Convert.ToInt32(selectedRow.Cells["ShiftId"].Value);
+                    string employeeName = selectedRow.Cells["EmployeeName"].Value.ToString();
+                    DateTime shiftDate = Convert.ToDateTime(selectedRow.Cells["Date"].Value);
+                    decimal hoursWorked = Convert.ToDecimal(selectedRow.Cells["HoursWorked"].Value);
+
+                    // EditShiftForm'u oluşturun ve verileri aktarın
+                    EditShiftForm editShiftForm = new EditShiftForm(shiftId, employeeName, shiftDate, hoursWorked);
+
+                    // EditShiftForm'u gösterin
+                    editShiftForm.ShowDialog();
+
+                    // Daha sonra güncellenmiş verileri yeniden yükleyebilirsiniz
+                    LoadShiftDataToDataGridView(); // Bu metodu projenizde nasıl tanımladığınıza bağlı olarak değiştirebilirsiniz
+                }
 			}
 		}
 
@@ -203,5 +239,46 @@ namespace ARESDOKUM
 				}
 			}
 		}
-	}
+
+        private void btn_Filter_Click(object sender, EventArgs e)
+        {
+            btn_FilterClear.Visible = true;
+            // Başlangıç ve bitiş tarihlerini DateTimePicker'lardan alın
+            DateTime startDate = dateTimePickerStart.Value.Date;
+            DateTime endDate = dateTimePickerEnd.Value.Date;
+
+            // Seçilen çalışanın ID'sini alın
+            int selectedEmployeeId = (int)cb_EmployeeListFilter.SelectedValue;
+
+            // Shift tablosundaki vardiyaları seçilen tarih aralığına ve çalışana göre filtreleyin
+            using (var context = new MyDbContext())
+            {
+                var filteredShifts = context.Shifts
+                    .Include(s => s.Employee)
+                    .Where(s => s.Date >= startDate && s.Date <= endDate &&
+                                (selectedEmployeeId == -1 || s.EmployeeId == selectedEmployeeId)) // -1 seçiliyse tüm çalışanlar için filtrele
+                    .ToList();
+
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
+
+                // Filtrelenmiş vardiyaları DataGridView'e ekleyin
+                foreach (var shift in filteredShifts)
+                {
+                    dataGridView1.Rows.Add(
+                        shift.ShiftId,
+                        shift.Employee.Name,
+                        shift.Date.ToShortDateString(),
+                        shift.HoursWorked,
+                        shift.PaymentMade ? "Ödendi" : "Ödenmedi"
+                    );
+                }
+            }
+        }
+
+        private void btn_FilterClear_Click(object sender, EventArgs e)
+        {
+            LoadShiftDataToDataGridView();
+        }
+    }
 }
