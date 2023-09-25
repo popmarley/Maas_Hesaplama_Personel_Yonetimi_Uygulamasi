@@ -22,6 +22,37 @@ namespace ARESDOKUM
             InitializeComponent();
         }
 
+        private void LoadEmployeeList()
+        {
+            using (var context = new MyDbContext())
+            {
+                var employees = context.Employees.ToList();
+
+                // ComboBox'ı doldurun
+                cb_EmployeeList.DisplayMember = "Name"; // ComboBox'ta görünen metin
+                cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
+                cb_EmployeeList.DataSource = employees;
+            }
+
+            using (var context = new MyDbContext())
+            {
+                Employee allEmployees = new Employee
+                {
+                    EmployeeId = -1, // Özel bir değer atayabilirsiniz
+                    Name = "Tüm Çalışanlar" // Görünen metin
+                };
+
+                // Combobox'ı doldururken bu özel nesneyi de ekleyin.
+                var employees = context.Employees.ToList();
+                employees.Insert(0, allEmployees); // "Tüm Çalışanlar" seçeneğini en başa ekleyin.
+
+                // ComboBox'ı doldurun
+                cb_EmployeeListFilter.DisplayMember = "Name"; // ComboBox'ta görünen metin
+                cb_EmployeeListFilter.ValueMember = "EmployeeId"; // Seçilen değer
+                cb_EmployeeListFilter.DataSource = employees;
+            }
+        }
+
         private void LoadAdvanceList()
         {
             using (var context = new MyDbContext()) // MyDbContext sınıfınıza uygun context adınızı kullanmalısınız
@@ -52,9 +83,6 @@ namespace ARESDOKUM
                 }
             }
         }
-
-        
-
 
         private void btn_Exit_Click(object sender, EventArgs e) => Application.Exit();
 
@@ -104,15 +132,7 @@ namespace ARESDOKUM
 
         private void AdvanceForm_Load(object sender, EventArgs e)
         {
-            using (var context = new MyDbContext())
-            {
-                var employees = context.Employees.ToList();
-
-                // ComboBox'ı doldurun
-                cb_EmployeeList.DisplayMember = "Name"; // ComboBox'ta görünen metin
-                cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
-                cb_EmployeeList.DataSource = employees;
-            }
+            LoadEmployeeList();
             LoadAdvanceList();
         }
 
@@ -134,6 +154,46 @@ namespace ARESDOKUM
         private void cb_EmployeeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Filter_Click(object sender, EventArgs e)
+        {
+            btn_FilterClear.Visible = true;
+            // Başlangıç ve bitiş tarihlerini DateTimePicker'lardan alın
+            DateTime startDate = dateTimePickerStart.Value.Date;
+            DateTime endDate = dateTimePickerEnd.Value.Date;
+
+            // Seçilen çalışanın ID'sini alın
+            int selectedEmployeeId = (int)cb_EmployeeListFilter.SelectedValue;
+
+            // Advance tablosundaki avansları seçilen tarih aralığına ve çalışana göre filtreleyin
+            using (var context = new MyDbContext())
+            {
+                var filteredAdvances = context.Advances
+                    .Include(a => a.Employee)
+                    .Where(a => a.RequestDate >= startDate && a.RequestDate <= endDate &&
+                                (selectedEmployeeId == -1 || a.EmployeeId == selectedEmployeeId)) // -1 seçiliyse tüm çalışanlar için filtrele
+                    .ToList();
+
+                // DataGridView'i temizleyin
+                dataGridView1.Rows.Clear();
+
+                // Filtrelenmiş avansları DataGridView'e ekleyin
+                foreach (var advance in filteredAdvances)
+                {
+                    dataGridView1.Rows.Add(
+                        advance.AdvanceId,
+                        advance.Employee.Name,
+                        advance.RequestDate.ToShortDateString(),
+                        $"{advance.Amount:C}" // Amount alanına TL sembolü ekleyin
+                    );
+                }
+            }
+        }
+
+        private void btn_FilterClear_Click(object sender, EventArgs e)
+        {
+            LoadAdvanceList();
         }
     }
 }
