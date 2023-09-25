@@ -73,10 +73,7 @@ namespace ARESDOKUM
             }
         }
 
-
-
-
-        private void LeaveForm_Load(object sender, EventArgs e)
+        private void LoadEmployeeList()
         {
             using (var context = new MyDbContext())
             {
@@ -85,8 +82,32 @@ namespace ARESDOKUM
                 // ComboBox'ı doldurun
                 cb_EmployeeList.DisplayMember = "Name"; // ComboBox'ta görünen metin
                 cb_EmployeeList.ValueMember = "EmployeeId"; // Seçilen değer
-                cb_EmployeeList.DataSource = employees;
+                cb_EmployeeList.DataSource = employees; 
             }
+
+            using (var context = new MyDbContext())
+            {
+                Employee allEmployees = new Employee
+                {
+                    EmployeeId = -1, // Özel bir değer atayabilirsiniz
+                    Name = "Tüm Çalışanlar" // Görünen metin
+                };
+
+                // Combobox'ı doldururken bu özel nesneyi de ekleyin.
+                var employees = context.Employees.ToList();
+                employees.Insert(0, allEmployees); // "Tüm Çalışanlar" seçeneğini en başa ekleyin.
+
+                // ComboBox'ı doldurun
+                cb_EmployeeListFilter.DisplayMember = "Name"; // ComboBox'ta görünen metin
+                cb_EmployeeListFilter.ValueMember = "EmployeeId"; // Seçilen değer
+                cb_EmployeeListFilter.DataSource = employees;
+            }
+        }
+
+
+        private void LeaveForm_Load(object sender, EventArgs e)
+        {
+            LoadEmployeeList();
             LoadLeaveDataToDataGridView();
         }
 
@@ -134,6 +155,102 @@ namespace ARESDOKUM
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_Filter_Click(object sender, EventArgs e)
+        {
+            btn_FilterClear.Visible = true;
+            // Başlangıç ve bitiş tarihlerini DateTimePicker'lardan alın
+            DateTime startDate = dateTimePickerStart.Value.Date;
+            DateTime endDate = dateTimePickerEnd.Value.Date;
+
+            // Seçilen çalışanın ID'sini alın
+            int selectedEmployeeId = (int)cb_EmployeeListFilter.SelectedValue;
+
+            // Tüm çalışanlar seçiliyse
+            if (selectedEmployeeId == -1)
+            {
+                // Leave tablosundaki tüm izinleri seçilen tarih aralığına göre filtrelemeyin
+                using (var context = new MyDbContext())
+                {
+                    var allLeaves = context.Leaves
+                        .Include(l => l.Employee)
+                        .Where(l => l.EndDate >= startDate && l.StartDate <= endDate)
+                        .ToList();
+
+                    // DataGridView'i temizleyin
+                    dataGridView1.Rows.Clear();
+
+                    // Tüm izinleri DataGridView'e ekleyin
+                    foreach (var leave in allLeaves)
+                    {
+                        dataGridView1.Rows.Add(
+                            leave.LeaveId,
+                            leave.Employee.Name, // İşçinin adını kullanın
+                            leave.StartDate.ToShortDateString(),
+                            leave.EndDate.ToShortDateString(),
+                            leave.Reason
+                        );
+                    }
+                }
+            }
+            else
+            {
+                // Seçilen çalışanın izinlerini seçilen tarih aralığına ve çalışana göre filtreleyin
+                using (var context = new MyDbContext())
+                {
+                    var filteredLeaves = context.Leaves
+                        .Include(l => l.Employee)
+                        .Where(l => l.EndDate >= startDate && l.StartDate <= endDate && l.EmployeeId == selectedEmployeeId)
+                        .ToList();
+
+                    // DataGridView'i temizleyin
+                    dataGridView1.Rows.Clear();
+
+                    // Filtrelenmiş izinleri DataGridView'e ekleyin
+                    foreach (var leave in filteredLeaves)
+                    {
+                        dataGridView1.Rows.Add(
+                            leave.LeaveId,
+                            leave.Employee.Name, // İşçinin adını kullanın
+                            leave.StartDate.ToShortDateString(),
+                            leave.EndDate.ToShortDateString(),
+                            leave.Reason
+                        );
+                    }
+                }
+            }
+
+            // Filtrelemeyi yaptıktan sonra bitiş tarihlerini renklendir
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                // EndDate hücresini alın
+                DataGridViewCell endDateCell = row.Cells["EndDate"];
+                if (endDateCell != null && endDateCell.Value != null)
+                {
+                    DateTime endDatee;
+                    if (DateTime.TryParse(endDateCell.Value.ToString(), out endDatee))
+                    {
+                        if (endDatee < DateTime.Now)
+                        {
+                            // EndDate şuanki tarihten önce ise Kırmızı renkte yaz
+                            endDateCell.Style.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            // EndDate şuanki tarihten sonra ise Yeşil renkte yaz
+                            endDateCell.Style.ForeColor = Color.Green;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        private void btn_FilterClear_Click(object sender, EventArgs e)
+        {
+            LoadLeaveDataToDataGridView();
         }
     }
 }

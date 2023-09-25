@@ -35,6 +35,11 @@
             this.btn_AddLeave = new System.Windows.Forms.Button();
             this.rTxt_Reason = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.LeaveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,13 +48,15 @@
             this.btn_Main = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.LeaveId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_EmployeeListFilter = new System.Windows.Forms.ComboBox();
+            this.btn_FilterClear = new System.Windows.Forms.Button();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btn_Filter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cb_EmployeeList
@@ -111,11 +118,46 @@
             this.StartDate,
             this.EndDate,
             this.Reason});
-            this.dataGridView1.Location = new System.Drawing.Point(367, 11);
+            this.dataGridView1.Location = new System.Drawing.Point(356, 92);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 529);
+            this.dataGridView1.Size = new System.Drawing.Size(761, 432);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // LeaveId
+            // 
+            this.LeaveId.HeaderText = "Sıra";
+            this.LeaveId.MinimumWidth = 6;
+            this.LeaveId.Name = "LeaveId";
+            this.LeaveId.Width = 50;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.HeaderText = "Ad Soyad";
+            this.EmployeeName.MinimumWidth = 6;
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.Width = 120;
+            // 
+            // StartDate
+            // 
+            this.StartDate.HeaderText = "Başlangıç Tarihi";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Width = 150;
+            // 
+            // EndDate
+            // 
+            this.EndDate.HeaderText = "Bitiş Tarihi";
+            this.EndDate.MinimumWidth = 6;
+            this.EndDate.Name = "EndDate";
+            this.EndDate.Width = 150;
+            // 
+            // Reason
+            // 
+            this.Reason.HeaderText = "İzin Nedeni";
+            this.Reason.MinimumWidth = 6;
+            this.Reason.Name = "Reason";
+            this.Reason.Width = 200;
             // 
             // label1
             // 
@@ -218,40 +260,72 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "İzin Talebi Gir";
             // 
-            // LeaveId
+            // groupBox2
             // 
-            this.LeaveId.HeaderText = "Sıra";
-            this.LeaveId.MinimumWidth = 6;
-            this.LeaveId.Name = "LeaveId";
-            this.LeaveId.Width = 50;
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.cb_EmployeeListFilter);
+            this.groupBox2.Controls.Add(this.btn_FilterClear);
+            this.groupBox2.Controls.Add(this.dateTimePickerStart);
+            this.groupBox2.Controls.Add(this.dateTimePickerEnd);
+            this.groupBox2.Controls.Add(this.btn_Filter);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.Location = new System.Drawing.Point(356, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(439, 84);
+            this.groupBox2.TabIndex = 42;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Filtrele";
             // 
-            // EmployeeName
+            // cb_EmployeeListFilter
             // 
-            this.EmployeeName.HeaderText = "Ad Soyad";
-            this.EmployeeName.MinimumWidth = 6;
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.Width = 120;
+            this.cb_EmployeeListFilter.FormattingEnabled = true;
+            this.cb_EmployeeListFilter.Location = new System.Drawing.Point(225, 39);
+            this.cb_EmployeeListFilter.Name = "cb_EmployeeListFilter";
+            this.cb_EmployeeListFilter.Size = new System.Drawing.Size(121, 24);
+            this.cb_EmployeeListFilter.TabIndex = 39;
             // 
-            // StartDate
+            // btn_FilterClear
             // 
-            this.StartDate.HeaderText = "Başlangıç Tarihi";
-            this.StartDate.MinimumWidth = 6;
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Width = 150;
+            this.btn_FilterClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_FilterClear.BackgroundImage")));
+            this.btn_FilterClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_FilterClear.Location = new System.Drawing.Point(387, 37);
+            this.btn_FilterClear.Name = "btn_FilterClear";
+            this.btn_FilterClear.Size = new System.Drawing.Size(29, 31);
+            this.btn_FilterClear.TabIndex = 40;
+            this.btn_FilterClear.UseVisualStyleBackColor = true;
+            this.btn_FilterClear.Visible = false;
+            this.btn_FilterClear.Click += new System.EventHandler(this.btn_FilterClear_Click);
             // 
-            // EndDate
+            // dateTimePickerStart
             // 
-            this.EndDate.HeaderText = "Bitiş Tarihi";
-            this.EndDate.MinimumWidth = 6;
-            this.EndDate.Name = "EndDate";
-            this.EndDate.Width = 150;
+            this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePickerStart.CustomFormat = "dd.MM.yyyy";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(23, 39);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(94, 22);
+            this.dateTimePickerStart.TabIndex = 36;
             // 
-            // Reason
+            // dateTimePickerEnd
             // 
-            this.Reason.HeaderText = "İzin Nedeni";
-            this.Reason.MinimumWidth = 6;
-            this.Reason.Name = "Reason";
-            this.Reason.Width = 200;
+            this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePickerEnd.CustomFormat = "dd.MM.yyyy";
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(123, 39);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(96, 22);
+            this.dateTimePickerEnd.TabIndex = 37;
+            // 
+            // btn_Filter
+            // 
+            this.btn_Filter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Filter.BackgroundImage")));
+            this.btn_Filter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Filter.Location = new System.Drawing.Point(352, 37);
+            this.btn_Filter.Name = "btn_Filter";
+            this.btn_Filter.Size = new System.Drawing.Size(29, 31);
+            this.btn_Filter.TabIndex = 38;
+            this.btn_Filter.UseVisualStyleBackColor = true;
+            this.btn_Filter.Click += new System.EventHandler(this.btn_Filter_Click);
             // 
             // LeaveForm
             // 
@@ -259,6 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1149, 553);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Main);
@@ -273,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +375,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reason;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox cb_EmployeeListFilter;
+        private System.Windows.Forms.Button btn_FilterClear;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.Button btn_Filter;
     }
 }
