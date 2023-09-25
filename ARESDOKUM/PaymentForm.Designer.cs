@@ -32,13 +32,20 @@
             this.btn_Main = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.PaymentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btn_Filter = new System.Windows.Forms.Button();
+            this.cb_EmployeeList = new System.Windows.Forms.ComboBox();
+            this.btn_FilterClear = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Main
@@ -85,22 +92,11 @@
             this.Amount,
             this.PaymentDate,
             this.Description});
-            this.dataGridView1.Location = new System.Drawing.Point(279, 48);
+            this.dataGridView1.Location = new System.Drawing.Point(273, 102);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(694, 511);
+            this.dataGridView1.Size = new System.Drawing.Size(694, 460);
             this.dataGridView1.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(29, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 34);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Ödenenler";
             // 
             // PaymentId
             // 
@@ -137,12 +133,91 @@
             this.Description.Name = "Description";
             this.Description.Width = 200;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(29, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 34);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Ödenenler";
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePickerStart.CustomFormat = "dd.MM.yyyy";
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(23, 39);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(94, 22);
+            this.dateTimePickerStart.TabIndex = 36;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dateTimePickerEnd.CustomFormat = "dd.MM.yyyy";
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(123, 39);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(96, 22);
+            this.dateTimePickerEnd.TabIndex = 37;
+            // 
+            // btn_Filter
+            // 
+            this.btn_Filter.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Filter.BackgroundImage")));
+            this.btn_Filter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Filter.Location = new System.Drawing.Point(352, 37);
+            this.btn_Filter.Name = "btn_Filter";
+            this.btn_Filter.Size = new System.Drawing.Size(29, 31);
+            this.btn_Filter.TabIndex = 38;
+            this.btn_Filter.UseVisualStyleBackColor = true;
+            this.btn_Filter.Click += new System.EventHandler(this.btn_Filter_Click);
+            // 
+            // cb_EmployeeList
+            // 
+            this.cb_EmployeeList.FormattingEnabled = true;
+            this.cb_EmployeeList.Location = new System.Drawing.Point(225, 39);
+            this.cb_EmployeeList.Name = "cb_EmployeeList";
+            this.cb_EmployeeList.Size = new System.Drawing.Size(121, 24);
+            this.cb_EmployeeList.TabIndex = 39;
+            // 
+            // btn_FilterClear
+            // 
+            this.btn_FilterClear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_FilterClear.BackgroundImage")));
+            this.btn_FilterClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_FilterClear.Location = new System.Drawing.Point(387, 37);
+            this.btn_FilterClear.Name = "btn_FilterClear";
+            this.btn_FilterClear.Size = new System.Drawing.Size(29, 31);
+            this.btn_FilterClear.TabIndex = 40;
+            this.btn_FilterClear.UseVisualStyleBackColor = true;
+            this.btn_FilterClear.Visible = false;
+            this.btn_FilterClear.Click += new System.EventHandler(this.btn_FilterClear_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cb_EmployeeList);
+            this.groupBox1.Controls.Add(this.btn_FilterClear);
+            this.groupBox1.Controls.Add(this.dateTimePickerStart);
+            this.groupBox1.Controls.Add(this.dateTimePickerEnd);
+            this.groupBox1.Controls.Add(this.btn_Filter);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.Location = new System.Drawing.Point(273, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(503, 84);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtrele";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(989, 571);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Main);
@@ -154,6 +229,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PaymentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +246,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.Button btn_Filter;
+        private System.Windows.Forms.ComboBox cb_EmployeeList;
+        private System.Windows.Forms.Button btn_FilterClear;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

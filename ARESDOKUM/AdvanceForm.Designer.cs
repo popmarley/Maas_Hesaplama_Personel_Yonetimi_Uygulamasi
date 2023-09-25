@@ -100,6 +100,7 @@
             this.cb_EmployeeList.Name = "cb_EmployeeList";
             this.cb_EmployeeList.Size = new System.Drawing.Size(200, 24);
             this.cb_EmployeeList.TabIndex = 22;
+            this.cb_EmployeeList.SelectedIndexChanged += new System.EventHandler(this.cb_EmployeeList_SelectedIndexChanged);
             // 
             // txt_Amount
             // 

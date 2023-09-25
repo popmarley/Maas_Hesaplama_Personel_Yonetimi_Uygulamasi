@@ -162,9 +162,10 @@ namespace ARESDOKUM
 			deleteButtonColumn.Text = "Sil";
 			deleteButtonColumn.UseColumnTextForButtonValue = true;
 			dataGridView1.Columns.Add(deleteButtonColumn);
-		}
+        }
+       
 
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			// Sütun indeksi geçerli bir indekse işaret ediyorsa
 			if (e.RowIndex >= 0)
