@@ -15,7 +15,8 @@ namespace ARESDOKUM
 {
     public partial class ShiftForm : Form
     {
-        public ShiftForm()
+		private int? currentlyEditingShiftId = null;
+		public ShiftForm()
         {
             InitializeComponent();
         }
@@ -69,7 +70,9 @@ namespace ARESDOKUM
                 cb_EmployeeList.DataSource = employees;
             }
             LoadShiftDataToDataGridView();
-        }
+            AddButtonColumnsToDataGridView();
+
+		}
 
         private void dt_Date_ValueChanged(object sender, EventArgs e)
         {
@@ -87,7 +90,7 @@ namespace ARESDOKUM
                 decimal hoursWorked;
                 if (!decimal.TryParse(txt_ShiftHour.Text, out hoursWorked))
                 {
-                    MessageBox.Show("Geçersiz saatlik çalışma süresi!");
+                    MessageBox.Show("Lütfen geçerli bir saat dilimi giriniz!");
                     return; // Hatalı girişi işlemeyi durdur
                 }
 
@@ -110,7 +113,9 @@ namespace ARESDOKUM
 
                 MessageBox.Show("Vardiya başarıyla eklendi.");
                 LoadShiftDataToDataGridView();
-            }
+
+				txt_ShiftHour.Text = "";  // Bu satırı ekleyerek txt_ShiftHour textbox'ını temizliyoruz.
+			}
         }
 
         private void btn_Exit_Click(object sender, EventArgs e) => Application.Exit();
@@ -121,5 +126,81 @@ namespace ARESDOKUM
             main.Show();
             this.Close();
         }
-    }
+
+		private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			// Ödeme durumunun bulunduğu sütunu kontrol ediyoruz
+			if (dataGridView1.Columns[e.ColumnIndex].Name == "PaymentMade") // Burada "PaymentMade" sütun adınızın ne olduğuna bağlı olarak değiştirilmelidir
+			{
+				if (e.Value != null)
+				{
+					string cellValue = e.Value.ToString();
+					if (cellValue == "Ödendi")
+					{
+						dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Green;
+					}
+					else if (cellValue == "Ödenmedi")
+					{
+						dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Red;
+					}
+				}
+			}
+		}
+
+		private void AddButtonColumnsToDataGridView()
+		{
+			// Düzenle buton sütunu
+			DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+			editButtonColumn.Name = "Duzenle";
+			editButtonColumn.Text = "Düzenle";
+			editButtonColumn.UseColumnTextForButtonValue = true;
+			dataGridView1.Columns.Add(editButtonColumn);
+
+			// Sil buton sütunu
+			DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+			deleteButtonColumn.Name = "Sil";
+			deleteButtonColumn.Text = "Sil";
+			deleteButtonColumn.UseColumnTextForButtonValue = true;
+			dataGridView1.Columns.Add(deleteButtonColumn);
+		}
+
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			// Sütun indeksi geçerli bir indekse işaret ediyorsa
+			if (e.RowIndex >= 0)
+			{
+				// Eğer tıklanan sütun "Sil" butonu ise
+				if (dataGridView1.Columns[e.ColumnIndex].Name == "Sil")
+				{
+					DialogResult result = MessageBox.Show("Bu veriyi silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo);
+
+					if (result == DialogResult.Yes)
+					{
+						// Silme işlemi yap
+						int shiftId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ShiftId"].Value);  // ShiftId sütununuzu kullanarak ilgili satırın ID'sini alın
+						DeleteShift(shiftId);  // Bu fonksiyonu oluşturmalısınız ve ShiftId'yi parametre olarak alarak ilgili satırı veritabanından silmelisiniz
+						LoadShiftDataToDataGridView();  // Güncel verileri tekrar yükle
+					}
+				}
+				// Eğer tıklanan sütun "Düzenle" butonu ise
+				else if (dataGridView1.Columns[e.ColumnIndex].Name == "Duzenle")
+				{
+					
+				}
+			}
+		}
+
+		private void DeleteShift(int shiftId)
+		{
+			using (var context = new MyDbContext())
+			{
+				var shiftToDelete = context.Shifts.Find(shiftId);
+				if (shiftToDelete != null)
+				{
+					context.Shifts.Remove(shiftToDelete);
+					context.SaveChanges();
+				}
+			}
+		}
+	}
 }
