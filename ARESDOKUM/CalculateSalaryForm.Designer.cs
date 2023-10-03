@@ -52,8 +52,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PaymentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -301,8 +301,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PaymentId,
             this.EmployeeName,
-            this.PaymentDate,
-            this.Amount});
+            this.Amount,
+            this.PaymentDate});
             this.dataGridView1.Location = new System.Drawing.Point(773, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(447, 405);
@@ -318,15 +318,15 @@
             this.EmployeeName.HeaderText = "Ad Soyad";
             this.EmployeeName.Name = "EmployeeName";
             // 
-            // PaymentDate
-            // 
-            this.PaymentDate.HeaderText = "Ödeme Tarihi";
-            this.PaymentDate.Name = "PaymentDate";
-            // 
             // Amount
             // 
             this.Amount.HeaderText = "Ödenen Tutar";
             this.Amount.Name = "Amount";
+            // 
+            // PaymentDate
+            // 
+            this.PaymentDate.HeaderText = "Ödeme Tarihi";
+            this.PaymentDate.Name = "PaymentDate";
             // 
             // CalculateSalaryForm
             // 
@@ -353,6 +353,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ares Döküm | PYS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CalculateSalaryForm_FormClosed);
             this.Load += new System.EventHandler(this.CalculateSalaryForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -387,7 +388,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentDate;
     }
 }
