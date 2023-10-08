@@ -313,6 +313,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ares Döküm | PYS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdvanceForm_FormClosed);
             this.Load += new System.EventHandler(this.AdvanceForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

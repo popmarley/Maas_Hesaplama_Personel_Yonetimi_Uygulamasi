@@ -121,7 +121,7 @@
   <data name="btn_Main.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAYAAAAMzckjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAUWdJREFUeF7t3QmYVtWd7/vKqMl5uj39nNO3+9zuu7vPOX1u33tPjDFxiMZZHLGT
+        DgAACw4BQL7hQQAAUWdJREFUeF7t3QmYVtWd7/vKqMl5uj39nNO3+9zuu7vPOX1u33tPjDFxiMZZHLGT
         qFEjCsggg4AgIuI8JjgS52icJ+JsVGJAxSg4EGKIIqKgVBWTjDITqKJg3fVbb+3Ka/kXqXr3fodV3zzP
         5ynyF/Zae7+b5/2x1l5r1znnAAAA0IWYRQAAAMTLLAIAACBeZhEAAADxMosAAACIl1kEAABAvMwiAAAA
         4mUWAQAAEC+zCAAAgHiZRQAAAMTLLAIAACBeZhEAAADxMosAAACIl1kEAABAvMwiAAAA4mUWAQAAEC+z
@@ -2228,22 +2228,10 @@
   <metadata name="RequestDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="AdvanceId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="EmployeeName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="RequestDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btn_FilterClear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAChHSURBVHhe7d0J
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAChHSURBVHhe7d0J
         lGxVfahx5nmeEZkHQURAAiICEn1GHIhKVAYVcYhIjBJEQSUYMNEgCs55oigik4AySERlEpkEAVFAEUVA
         QAZBJoELXOC972971x34d9/uOqfq7F31fWv91noryeOePl199q6qc/aex8zM+tpS2BivxLtwML6EE3E2
         rsLvcSvuw2P4f3OYjvjf3YzrcDnOwak4Fl/EAdgNL8ZqmA9mZmbW59bEP+KjOBqX4E+YczAflCdwEy5A

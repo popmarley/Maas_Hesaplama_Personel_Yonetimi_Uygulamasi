@@ -252,5 +252,10 @@ namespace ARESDOKUM
         {
             LoadLeaveDataToDataGridView();
         }
+
+        private void LeaveForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

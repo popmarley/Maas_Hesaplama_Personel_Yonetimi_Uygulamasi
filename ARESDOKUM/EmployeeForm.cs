@@ -117,5 +117,10 @@ namespace ARESDOKUM
                 e.Handled = true; // Birden fazla virgül girişine izin verme
             }
         }
+
+        private void EmployeeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -195,5 +195,10 @@ namespace ARESDOKUM
         {
             LoadAdvanceList();
         }
+
+        private void AdvanceForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -60,5 +60,10 @@ namespace ARESDOKUM
             paymentForm.Show();
             this.Hide();
         }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

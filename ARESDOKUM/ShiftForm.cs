@@ -280,5 +280,10 @@ namespace ARESDOKUM
         {
             LoadShiftDataToDataGridView();
         }
+
+        private void ShiftForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

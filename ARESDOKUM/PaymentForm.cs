@@ -145,6 +145,11 @@ namespace ARESDOKUM
         {
 
         }
+
+        private void PaymentForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
