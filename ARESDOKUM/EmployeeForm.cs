@@ -27,7 +27,8 @@ namespace ARESDOKUM
                 Employee newEmployee = new Employee
                 {
                     Name = txt_AddEmployee_Name.Text,
-                    BaseHourlyRate = decimal.Parse(txt_AddEmployee_HourlyRate.Text)
+                    BaseHourlyRate = decimal.Parse(txt_AddEmployee_HourlyRate.Text),
+                    DateOfStart = dateTimePicker1.Value
                 };
 
                 // Employee tablosuna yeni çalışanı ekleyin
